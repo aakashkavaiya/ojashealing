@@ -1,0 +1,2150 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="artifact-type" content="narrative">
+  <meta name="design-style" content="nocturne">
+  <title>आध्यात्मिक ज्ञान कोष — 30-भागीय दर्शन एवं ध्यान संहिता</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..600&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@1.43.0/dist/umd/lucide.min.js"></script>
+  <style>
+    :root {
+      color-scheme: dark;
+
+      /* Nocturne surface ramp */
+      --background: #0a101d;
+      --surface-container-low: #0e1626;
+      --surface-container: #111b2e;
+      --surface-container-high: #17243c;
+
+      /* Text */
+      --on-surface: #f2ece1;
+      --on-surface-variant: #9ba8bf;
+
+      /* Borders */
+      --outline: #384d73;
+      --outline-variant: #21304d;
+
+      /* Accents */
+      --primary: #dfaa5b;
+      --on-primary: #0a101d;
+      --primary-container: #2b261c;
+      --on-primary-container: #f5dcb0;
+      --secondary: #687a99;
+      --tertiary: #7cc4e8;
+      --error: #f27474;
+      --on-error: #1a0606;
+
+      /* Semantic */
+      --positive: #52d19c;
+      --warning: #dfaa5b;
+      --focus: #dfaa5b;
+
+      /* Data series */
+      --data-1: #dfaa5b;
+      --data-2: #7cc4e8;
+      --data-3: #52d19c;
+      --data-4: #e07a5f;
+      --data-context: #4a5d80;
+
+      /* Fonts (Devanagari first for non-Latin legibility) */
+      --font-headline: 'Noto Serif Devanagari', 'EB Garamond', serif;
+      --font-body: 'Noto Sans Devanagari', 'Plus Jakarta Sans', sans-serif;
+      --font-label: 'Noto Sans Devanagari', 'JetBrains Mono', monospace;
+      --font-mono: 'JetBrains Mono', monospace;
+
+      /* Shape */
+      --rounded: 0.25rem;
+      --rounded-lg: 0.375rem;
+      --rounded-full: 9999px;
+
+      /* Nocturne effects & tints */
+      --hairline: 1px solid var(--outline-variant);
+      --hairline-strong: 1px solid var(--outline);
+      --panel-highlight: inset 0 1px 0 rgba(242, 236, 225, 0.05);
+      --brass-glow: radial-gradient(circle at 88% 12%, rgba(223, 170, 91, 0.09), transparent 46%);
+      --sky-glow: radial-gradient(circle at 50% 50%, rgba(124, 196, 232, 0.16), transparent 68%);
+      --sky-tint: color-mix(in srgb, var(--tertiary) 12%, transparent);
+      --sky-border: color-mix(in srgb, var(--tertiary) 35%, transparent);
+      --brass-tint: color-mix(in srgb, var(--primary) 14%, transparent);
+      --brass-border: color-mix(in srgb, var(--primary) 35%, transparent);
+      --mint-tint: color-mix(in srgb, var(--data-3) 12%, transparent);
+      --mint-border: color-mix(in srgb, var(--data-3) 35%, transparent);
+      --coral-tint: color-mix(in srgb, var(--data-4) 12%, transparent);
+      --coral-border: color-mix(in srgb, var(--data-4) 35%, transparent);
+      --error-tint: color-mix(in srgb, var(--error) 12%, transparent);
+
+      /* Type scale (Narrative) */
+      --display-size: clamp(2.125rem, 1.35rem + 3vw, 3.625rem);
+      --headline-size: clamp(1.5rem, 1.15rem + 1.5vw, 2.25rem);
+      --subhead-size: clamp(1.125rem, 1rem + 0.5vw, 1.375rem);
+      --body-size: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+      --label-size: clamp(0.75rem, 0.72rem + 0.12vw, 0.8125rem);
+
+      /* Spacing scale */
+      --space-xs: 0.25rem;
+      --space-sm: 0.5rem;
+      --space-md: 1rem;
+      --space-lg: 1.5rem;
+      --space-xl: 2.5rem;
+      --space-2xl: 4rem;
+      --space-3xl: 5.5rem;
+
+      /* Motion */
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+      --dur-micro: 120ms;
+      --dur-short: 220ms;
+      --dur-medium: 320ms;
+      --dur-long: 480ms;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    html, body {
+      overflow-x: clip;
+      margin: 0;
+      padding: 0;
+      background-color: var(--background);
+      color: var(--on-surface);
+      font-family: var(--font-body);
+      font-size: var(--body-size);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    header { position: static !important; }
+
+    button, input, select, textarea {
+      font-family: inherit;
+      font-size: inherit;
+      color: inherit;
+    }
+
+    a {
+      color: var(--tertiary);
+      text-decoration: none;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    /* Layout Container */
+    .page-shell {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: var(--space-lg);
+      display: grid;
+      gap: var(--space-2xl);
+    }
+    .page-shell * { min-width: 0; }
+
+    /* Hero Header */
+    .hero-header {
+      background-color: var(--background);
+      background-image: var(--brass-glow);
+      border-bottom: var(--hairline);
+      padding: var(--space-2xl) var(--space-lg) var(--space-xl);
+    }
+    .hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      gap: var(--space-lg);
+    }
+
+    .coord-label {
+      font-family: var(--font-label);
+      font-size: var(--label-size);
+      color: var(--tertiary);
+      letter-spacing: 0;
+      text-transform: none;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-sm);
+    }
+    .mono-num {
+      font-family: var(--font-mono);
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-title {
+      font-family: var(--font-headline);
+      font-weight: 500;
+      font-size: var(--display-size);
+      line-height: 1.22;
+      color: var(--on-surface);
+      margin: 0;
+      max-width: 24ch;
+    }
+    .hero-title .focal-brass {
+      color: var(--primary);
+    }
+    .deck-brass {
+      font-family: var(--font-body);
+      font-size: var(--subhead-size);
+      font-weight: 500;
+      color: var(--primary);
+      margin: 0;
+      max-width: 58ch;
+      line-height: 1.5;
+    }
+    .hero-lede {
+      color: var(--on-surface-variant);
+      max-width: 65ch;
+      margin: 0;
+      line-height: 1.72;
+    }
+
+    /* Quick Chapter Index Strip */
+    .chapter-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+      padding-top: var(--space-sm);
+    }
+    .nav-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      min-height: 44px;
+      padding: var(--space-xs) var(--space-md);
+      background: var(--surface-container);
+      border: var(--hairline);
+      border-radius: var(--rounded);
+      color: var(--on-surface-variant);
+      font-size: var(--label-size);
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
+    }
+    .nav-pill:hover {
+      background: var(--surface-container-high);
+      border-color: var(--outline);
+      color: var(--on-surface);
+    }
+
+    /* Nocturne Midnight Panels */
+    .panel {
+      background: var(--surface-container);
+      border: var(--hairline);
+      box-shadow: var(--panel-highlight);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+    }
+    .panel-low {
+      background: var(--surface-container-low);
+      border: var(--hairline);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-lg);
+    }
+    .observation-well {
+      background: var(--background);
+      border: var(--hairline);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+    }
+
+    /* Key Figures Grid */
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
+      gap: var(--space-md);
+    }
+    .stat-card {
+      background: var(--surface-container);
+      border: var(--hairline);
+      box-shadow: var(--panel-highlight);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md) var(--space-lg);
+      display: grid;
+      gap: var(--space-xs);
+    }
+    .stat-label {
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+      font-weight: 500;
+    }
+    .stat-value {
+      font-family: var(--font-headline);
+      font-size: clamp(1.625rem, 1.3rem + 1vw, 2.125rem);
+      font-weight: 500;
+      color: var(--on-surface);
+      line-height: 1.2;
+    }
+    .stat-note {
+      font-size: var(--label-size);
+      color: var(--tertiary);
+    }
+
+    /* Section Architecture */
+    .section-block {
+      display: grid;
+      gap: var(--space-lg);
+      padding-top: var(--space-xl);
+      border-top: var(--hairline);
+    }
+    .section-block:first-of-type {
+      border-top: none;
+      padding-top: 0;
+    }
+    .section-header {
+      display: grid;
+      gap: var(--space-xs);
+    }
+    .section-title {
+      font-family: var(--font-headline);
+      font-weight: 500;
+      font-size: var(--headline-size);
+      line-height: 1.28;
+      margin: 0;
+      color: var(--on-surface);
+      max-width: 34ch;
+    }
+    .section-sub {
+      color: var(--on-surface-variant);
+      margin: 0;
+      max-width: 65ch;
+      line-height: 1.68;
+    }
+
+    .prose {
+      max-width: 65ch;
+      margin: 0;
+      color: var(--on-surface);
+      line-height: 1.72;
+    }
+    .prose-muted {
+      max-width: 65ch;
+      margin: 0;
+      color: var(--on-surface-variant);
+      line-height: 1.68;
+    }
+
+    /* Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-xs);
+      border-radius: var(--rounded);
+      padding: var(--space-xs) var(--space-sm);
+      font-size: var(--label-size);
+      font-weight: 500;
+      line-height: 1.3;
+    }
+    .badge-sky {
+      background: var(--sky-tint);
+      color: var(--tertiary);
+      border: 1px solid var(--sky-border);
+    }
+    .badge-brass {
+      background: var(--brass-tint);
+      color: var(--primary);
+      border: 1px solid var(--brass-border);
+    }
+    .badge-mint {
+      background: var(--mint-tint);
+      color: var(--data-3);
+      border: 1px solid var(--mint-border);
+    }
+    .badge-coral {
+      background: var(--coral-tint);
+      color: var(--data-4);
+      border: 1px solid var(--coral-border);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-sm);
+      min-height: 44px;
+      padding: var(--space-sm) var(--space-lg);
+      border-radius: var(--rounded);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: var(--hairline-strong);
+      background: transparent;
+      color: var(--on-surface);
+      transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out), box-shadow var(--dur-short) var(--ease-out);
+    }
+    .btn:hover:not(:disabled) {
+      background: var(--surface-container-high);
+      border-color: var(--primary);
+    }
+    .btn:active:not(:disabled) {
+      transform: translateY(1px);
+    }
+    .btn:disabled {
+      opacity: 0.48;
+      cursor: not-allowed;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: var(--on-primary);
+      border-color: var(--primary);
+      font-weight: 600;
+    }
+    .btn-primary:hover:not(:disabled) {
+      background: var(--on-primary-container);
+      border-color: var(--on-primary-container);
+      color: var(--on-primary);
+    }
+    .btn-sky {
+      background: var(--sky-tint);
+      color: var(--tertiary);
+      border-color: var(--sky-border);
+    }
+    .btn-sky:hover:not(:disabled) {
+      background: var(--surface-container-high);
+      border-color: var(--tertiary);
+    }
+    .btn-active {
+      background: var(--primary-container);
+      color: var(--primary);
+      border-color: var(--primary);
+      box-shadow: 0 0 0 1px var(--primary);
+    }
+
+    /* Split Grids (Asymmetric Narrative Layouts) */
+    .split-asymmetric {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+      gap: var(--space-lg);
+      align-items: start;
+    }
+    .split-rail {
+      display: grid;
+      grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+      gap: var(--space-lg);
+      align-items: start;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr));
+      gap: var(--space-md);
+    }
+
+    /* Timeline & Interactive Selectors */
+    .selector-list {
+      display: grid;
+      gap: var(--space-sm);
+    }
+    .selector-item {
+      width: 100%;
+      text-align: left;
+      min-height: 44px;
+      padding: var(--space-md);
+      background: var(--surface-container-low);
+      border: var(--hairline);
+      border-radius: var(--rounded);
+      cursor: pointer;
+      display: grid;
+      gap: var(--space-xs);
+      transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
+    }
+    .selector-item:hover {
+      background: var(--surface-container-high);
+      border-color: var(--outline);
+    }
+    .selector-item[aria-selected="true"] {
+      background: var(--surface-container-high);
+      border-color: var(--primary);
+      box-shadow: inset 3px 0 0 var(--primary);
+    }
+    .selector-meta {
+      font-family: var(--font-mono);
+      font-size: var(--label-size);
+      color: var(--primary);
+    }
+    .selector-title {
+      font-weight: 600;
+      color: var(--on-surface);
+      font-size: 1rem;
+    }
+
+    /* Cosmic Composition Diagram */
+    .cosmic-viz-wrap {
+      display: grid;
+      gap: var(--space-md);
+    }
+    .svg-stage {
+      width: 100%;
+      min-height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .legend-list {
+      display: grid;
+      gap: var(--space-sm);
+    }
+    .legend-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: var(--space-md);
+      padding: var(--space-sm) var(--space-md);
+      background: var(--surface-container-low);
+      border-radius: var(--rounded);
+      border: var(--hairline);
+    }
+    .legend-swatch {
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    /* Vibration State Switch */
+    .state-toggle-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+
+    /* Comparison Table */
+    .data-table-wrap {
+      overflow-x: auto;
+    }
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.9375rem;
+    }
+    .data-table th {
+      font-size: var(--label-size);
+      color: var(--tertiary);
+      font-weight: 600;
+      padding: var(--space-sm) var(--space-md);
+      border-bottom: var(--hairline-strong);
+      white-space: nowrap;
+    }
+    .data-table td {
+      padding: var(--space-md);
+      border-bottom: var(--hairline);
+      vertical-align: top;
+      color: var(--on-surface);
+    }
+    .data-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Chakra Wheel / Ladder */
+    .chakra-bar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min(130px, 100%), 1fr));
+      gap: var(--space-sm);
+    }
+    .chakra-btn {
+      min-height: 44px;
+      padding: var(--space-sm) var(--space-md);
+      background: var(--surface-container-low);
+      border: var(--hairline);
+      border-radius: var(--rounded);
+      cursor: pointer;
+      text-align: left;
+      display: grid;
+      gap: 2px;
+      transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out);
+    }
+    .chakra-btn:hover {
+      background: var(--surface-container-high);
+      border-color: var(--outline);
+    }
+    .chakra-btn[aria-selected="true"] {
+      background: var(--primary-container);
+      border-color: var(--primary);
+    }
+
+    .polarity-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-md);
+    }
+
+    /* Meditation 15-Step Track */
+    .phase-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-sm);
+    }
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(165px, 100%), 1fr));
+      gap: var(--space-sm);
+    }
+    .step-node {
+      min-height: 44px;
+      padding: var(--space-sm) var(--space-md);
+      background: var(--surface-container-low);
+      border: var(--hairline);
+      border-radius: var(--rounded);
+      cursor: pointer;
+      text-align: left;
+      display: grid;
+      gap: 2px;
+      transition: border-color var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out);
+    }
+    .step-node:hover {
+      background: var(--surface-container-high);
+      border-color: var(--outline);
+    }
+    .step-node[aria-selected="true"] {
+      background: var(--surface-container-high);
+      border-color: var(--tertiary);
+      box-shadow: inset 0 -2px 0 var(--tertiary);
+    }
+
+    /* Guided Blue Healing Light Timer Studio */
+    .meditation-studio {
+      background-color: var(--surface-container);
+      background-image: var(--sky-glow);
+      border: var(--hairline-strong);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-xl);
+      display: grid;
+      gap: var(--space-lg);
+    }
+    .halo-display {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-md);
+      padding: var(--space-lg);
+      background: var(--background);
+      border: var(--hairline);
+      border-radius: var(--rounded);
+      min-height: 270px;
+      text-align: center;
+    }
+    .halo-ring {
+      width: 148px;
+      height: 148px;
+      border-radius: var(--rounded-full);
+      border: 2px solid var(--tertiary);
+      background: var(--sky-tint);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: transform var(--dur-long) var(--ease-in-out), box-shadow var(--dur-long) var(--ease-in-out);
+      box-shadow: 0 0 28px var(--sky-tint);
+    }
+    .halo-ring.breathing-in {
+      transform: scale(1.08);
+      box-shadow: 0 0 42px var(--sky-border);
+    }
+    .timer-readout {
+      font-family: var(--font-mono);
+      font-size: 2rem;
+      font-weight: 600;
+      color: var(--on-surface);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Directory Controls */
+    .filter-controls {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 260px);
+      gap: var(--space-md);
+      align-items: end;
+    }
+    .field-group {
+      display: grid;
+      gap: var(--space-xs);
+    }
+    .field-label {
+      font-size: var(--label-size);
+      color: var(--on-surface-variant);
+      font-weight: 500;
+    }
+    .field-input, .field-select {
+      min-height: 44px;
+      width: 100%;
+      padding: var(--space-sm) var(--space-md);
+      background: var(--background);
+      border: var(--hairline-strong);
+      border-radius: var(--rounded);
+      color: var(--on-surface);
+    }
+    .field-select {
+      padding-right: var(--space-xl);
+    }
+    .directory-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(290px, 100%), 1fr));
+      gap: var(--space-md);
+    }
+    .ep-card {
+      background: var(--surface-container-low);
+      border: var(--hairline);
+      border-radius: var(--rounded-lg);
+      padding: var(--space-md);
+      display: grid;
+      gap: var(--space-sm);
+      align-content: start;
+      transition: border-color var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out);
+    }
+    .ep-card:hover {
+      background: var(--surface-container);
+      border-color: var(--outline);
+    }
+
+    /* Collapsible details */
+    details.inline-drawer {
+      background: var(--surface-container-low);
+      border: var(--hairline);
+      border-radius: var(--rounded);
+      padding: var(--space-md);
+    }
+    details.inline-drawer summary {
+      cursor: pointer;
+      font-weight: 600;
+      color: var(--primary);
+      min-height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      list-style: none;
+    }
+    details.inline-drawer summary::-webkit-details-marker { display: none; }
+    details.inline-drawer[open] summary {
+      margin-bottom: var(--space-md);
+      padding-bottom: var(--space-sm);
+      border-bottom: var(--hairline);
+    }
+
+    /* Callout Quote */
+    .callout-brass {
+      border-left: 3px solid var(--primary);
+      background: var(--surface-container-low);
+      padding: var(--space-md) var(--space-lg);
+      border-radius: 0 var(--rounded) var(--rounded) 0;
+      color: var(--on-surface);
+      max-width: 65ch;
+    }
+
+    /* Footer */
+    .sources-footer {
+      border-top: var(--hairline);
+      padding-top: var(--space-xl);
+      padding-bottom: var(--space-2xl);
+      color: var(--on-surface-variant);
+      font-size: 0.9375rem;
+      display: grid;
+      gap: var(--space-sm);
+    }
+
+    /* Reveal animation */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity var(--dur-long) var(--ease-out), transform var(--dur-long) var(--ease-out);
+    }
+    .reveal-item.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive Breakpoints */
+    @media (max-width: 820px) {
+      .split-asymmetric, .split-rail, .polarity-grid, .filter-controls {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 640px) {
+      .page-shell {
+        padding: var(--space-md);
+        gap: var(--space-xl);
+      }
+      .hero-header {
+        padding: var(--space-xl) var(--space-md) var(--space-lg);
+      }
+      .meditation-studio {
+        padding: var(--space-md);
+      }
+      .chapter-nav {
+        gap: var(--space-xs);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .reveal-item {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero-header">
+    <div class="hero-inner">
+      <div class="coord-label">
+        <i data-lucide="compass" aria-hidden="true" width="16" height="16"></i>
+        <span>आध्यात्मिक ज्ञान कोष · 30-भागीय दर्शन एवं ध्यान संहिता</span>
+      </div>
+      <h1 class="hero-title">ब्रह्मांड की <span class="focal-brass">परम ऊर्जा</span> से शून्य और मोक्ष तक का तार्किक विज्ञान</h1>
+      <p class="deck-brass">परमात्मा कोई आकाश में बैठा व्यक्ति नहीं है—वह 70% डार्क एनर्जी (परम ऊर्जा) है, और हम स्वयं उसी ऊर्जा का अंश हैं।</p>
+      <p class="hero-lede">
+        ओजस हीलिंग के 30-भागों वाले ‘आध्यात्मिक ज्ञान कोष’ और ध्यान विधियों का यह संपूर्ण संकलन जीवन, मृत्यु, चक्रों, आत्माओं और ध्यान की प्रक्रिया को अंधविश्वास या चमत्कार से हटाकर ऊर्जा-विज्ञान और प्रत्यक्ष अनुभव की कसौटी पर प्रस्तुत करता है।
+      </p>
+
+      <nav class="chapter-nav" aria-label="अध्याय अनुक्रमणिका">
+        <button type="button" class="nav-pill" onclick="jumpToSection('sec-journey')">1. अन्वेषण यात्रा</button>
+        <button type="button" class="nav-pill" onclick="jumpToSection('sec-cosmos')">2. परम ऊर्जा विज्ञान</button>
+        <button type="button" class="nav-pill" onclick="jumpToSection('sec-soul')">3. जीव व पुनर्जन्म</button>
+        <button type="button" class="nav-pill" onclick="jumpToSection('sec-chakras')">4. सात चक्र व 14 लोक</button>
+        <button type="button" class="nav-pill" onclick="jumpToSection('sec-spirits')">5. प्रेत व सोल पार्ट सुरक्षा</button>
+        <button type="button" class="nav-pill" onclick="jumpToSection('sec-meditation')">6. 15 ध्यान चरण व 7 सतोरी</button>
+        <button type="button" class="nav-pill" onclick="jumpToSection('sec-death')">7. जीवन, मृत्यु व बारदो थोडल</button>
+        <button type="button" class="nav-pill" onclick="jumpToSection('sec-sadhana')">8. ब्लू हीलिंग लाइट अभ्यास</button>
+        <button type="button" class="nav-pill" onclick="jumpToSection('sec-directory')">9. 30-अध्याय निर्देशिका</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-shell">
+
+    <!-- Key Metrics Strip -->
+    <section aria-label="संहिता के प्रमुख स्तंभ">
+      <div class="metrics-grid">
+        <div class="stat-card">
+          <span class="stat-label">संपूर्ण ज्ञान श्रृंखला</span>
+          <span class="stat-value mono-num">30 भाग</span>
+          <span class="stat-note">सृष्टि विज्ञान से महापरिनिर्वाण तक</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">परम ऊर्जा (डार्क एनर्जी)</span>
+          <span class="stat-value mono-num">70% + 25%</span>
+          <span class="stat-note">केवल 5% भाग पदार्थ व शरीर बनता है</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">जीवात्मा लोक विभाजन</span>
+          <span class="stat-value mono-num">7 चक्र · 14 भाग</span>
+          <span class="stat-note">7 स्त्रैण चित्त और 7 पुरुष चित्त आवृत्तियां</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-label">साधना का पूर्ण पथ</span>
+          <span class="stat-value mono-num">15 चरण · 7 सतोरी</span>
+          <span class="stat-note">योग निद्रा से शून्य, संबोधि और मोक्ष</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 1: Author's Journey -->
+    <section id="sec-journey" class="section-block reveal-item">
+      <div class="section-header">
+        <span class="badge badge-brass">भाग 1 · आत्म-अन्वेषण और पारंपरिक मान्यताओं का भंग</span>
+        <h2 class="section-title">आधारहीन धार्मिक मान्यताओं के टूटने से प्रारंभ हुई वास्तविक सत्य की खोज</h2>
+        <p class="section-sub">
+          प्रवक्ता आनंद स्वरूप (पूर्व नाम अजय) ने स्वयं के अलौकिक अनुभवों, जादू-टोने के संकट और वर्ष 2000 के प्रलय की झूठी भविष्यवाणी के टूटने के बाद यह जाना कि धार्मिक पुस्तकें कुछ और कहती हैं तथा बीच के अगुवा (मिडलमैन) कुछ और।
+        </p>
+      </div>
+
+      <div class="split-rail">
+        <div class="selector-list" role="tablist" aria-label="जीवन के प्रमुख पड़ाव">
+          <button type="button" class="selector-item" role="tab" aria-selected="true" onclick="selectJourneyStep(0, this)">
+            <span class="selector-meta">1971 – 1978 (आयु 6 वर्ष)</span>
+            <span class="selector-title">जन्म और दो रहस्यमय प्रारंभिक विचार</span>
+          </button>
+          <button type="button" class="selector-item" role="tab" aria-selected="false" onclick="selectJourneyStep(1, this)">
+            <span class="selector-meta">1980 – 1984 (आयु 9–12 वर्ष)</span>
+            <span class="selector-title">आत्मा का प्रकाश और बाघ के नख का जादू-टोना</span>
+          </button>
+          <button type="button" class="selector-item" role="tab" aria-selected="false" onclick="selectJourneyStep(2, this)">
+            <span class="selector-meta">1986 – 1997</span>
+            <span class="selector-title">धर्म प्रचार, कंप्यूटर शिक्षा और पिता की मृत्यु</span>
+          </button>
+          <button type="button" class="selector-item" role="tab" aria-selected="false" onclick="selectJourneyStep(3, this)">
+            <span class="selector-meta">2000 – 2004</span>
+            <span class="selector-title">वर्ष 2000 की भविष्यवाणी का टूटना व धर्म त्याग</span>
+          </button>
+          <button type="button" class="selector-item" role="tab" aria-selected="false" onclick="selectJourneyStep(4, this)">
+            <span class="selector-meta">2005 – 2009</span>
+            <span class="selector-title">विविध पंथों का अध्ययन और ‘आनंद स्वरूप’ संन्यास</span>
+          </button>
+        </div>
+
+        <div id="journey-detail" class="panel" role="tabpanel">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Science of Param Urja & Universal Laws -->
+    <section id="sec-cosmos" class="section-block reveal-item">
+      <div class="section-header">
+        <span class="badge badge-sky">भाग 4, 5, 6 व 20 · ब्रह्मांड और ऊर्जा का विज्ञान</span>
+        <h2 class="section-title">संपूर्ण सृष्टि एक ही परम ऊर्जा (डार्क एनर्जी) के कंपन का रूपांतरण है</h2>
+        <p class="section-sub">
+          आधुनिक भौतिकी (पीटर हिग्स का हिग्स फील्ड व लार्ज हैड्रॉन कोलाइडर 2012) और आध्यात्मिक दर्शन दोनों एक ही तथ्य की ओर संकेत करते हैं: जो दिखाई देने वाला पदार्थ है वह केवल 5% है, शेष 95% अदृश्य ऊर्जा और अंतर्निहित डार्क मैटर है।
+        </p>
+      </div>
+
+      <div class="split-asymmetric">
+        <div class="panel cosmic-viz-wrap">
+          <div class="coord-label">ब्रह्मांड और मानव शरीर का ऊर्जा अनुपात (भाग 4)</div>
+          <div class="svg-stage">
+            <svg viewBox="0 0 360 240" width="100%" height="240" aria-label="ब्रह्मांडीय ऊर्जा अनुपात चार्ट: 70 प्रतिशत डार्क एनर्जी, 25 प्रतिशत डार्क मैटर, 5 प्रतिशत पदार्थ">
+              <!-- Outer Universe Ring -->
+              <circle cx="115" cy="120" r="82" fill="none" stroke="var(--outline-variant)" stroke-width="24" />
+              <!-- 70% Dark Energy (Circumference = 2*pi*82 = 515.22; 70% = 360.65) -->
+              <circle cx="115" cy="120" r="82" fill="none" stroke="var(--data-1)" stroke-width="24"
+                stroke-dasharray="360.65 515.22" stroke-dashoffset="0" transform="rotate(-90 115 120)" />
+              <!-- 25% Dark Matter (25% = 128.80) -->
+              <circle cx="115" cy="120" r="82" fill="none" stroke="var(--data-2)" stroke-width="24"
+                stroke-dasharray="128.80 515.22" stroke-dashoffset="-360.65" transform="rotate(-90 115 120)" />
+              <!-- 5% Matter (5% = 25.76) -->
+              <circle cx="115" cy="120" r="82" fill="none" stroke="var(--data-4)" stroke-width="24"
+                stroke-dasharray="25.76 515.22" stroke-dashoffset="-489.45" transform="rotate(-90 115 120)" />
+
+              <text x="115" y="114" text-anchor="middle" fill="var(--on-surface)" font-family="var(--font-mono)" font-size="22" font-weight="600">95%</text>
+              <text x="115" y="135" text-anchor="middle" fill="var(--on-surface-variant)" font-family="var(--font-body)" font-size="11">परम ऊर्जा स्वरूप</text>
+
+              <!-- Direct Annotations -->
+              <line x1="185" y1="68" x2="225" y2="52" stroke="var(--data-1)" stroke-width="1.5" />
+              <text x="230" y="50" fill="var(--data-1)" font-family="var(--font-mono)" font-size="12" font-weight="600">70%</text>
+              <text x="230" y="66" fill="var(--on-surface)" font-family="var(--font-body)" font-size="12">डार्क एनर्जी (परमात्मा)</text>
+
+              <line x1="196" y1="138" x2="225" y2="128" stroke="var(--data-2)" stroke-width="1.5" />
+              <text x="230" y="126" fill="var(--data-2)" font-family="var(--font-mono)" font-size="12" font-weight="600">25%</text>
+              <text x="230" y="142" fill="var(--on-surface)" font-family="var(--font-body)" font-size="12">डार्क मैटर (सूक्ष्म आधार)</text>
+
+              <line x1="115" y1="36" x2="225" y2="195" stroke="var(--data-4)" stroke-width="1" stroke-dasharray="3 3" />
+              <text x="230" y="192" fill="var(--data-4)" font-family="var(--font-mono)" font-size="12" font-weight="600">5%</text>
+              <text x="230" y="208" fill="var(--on-surface)" font-family="var(--font-body)" font-size="12">भौतिक पदार्थ (परमाणु-शरीर)</text>
+            </svg>
+          </div>
+          <div class="legend-list">
+            <div class="legend-row">
+              <div style="display:flex;align-items:center;gap:var(--space-sm);">
+                <span class="legend-swatch" style="background:var(--data-1);"></span>
+                <span>हिग्स फील्ड से क्वार्क, लेप्टॉन, इलेक्ट्रॉन-प्रोटॉन और शरीर बनता है।</span>
+              </div>
+              <span class="mono-num" style="color:var(--primary);">~99% ऊर्जा</span>
+            </div>
+            <div class="legend-row">
+              <div style="display:flex;align-items:center;gap:var(--space-sm);">
+                <span class="legend-swatch" style="background:var(--data-2);"></span>
+                <span>एक महायुग (सृष्टि चक्र) की अवधि — वर्तमान में 7वीं सृष्टि चल रही है।</span>
+              </div>
+              <span class="mono-num" style="color:var(--tertiary);">43,20,000 वर्ष</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" style="display:grid;gap:var(--space-md);">
+          <div class="coord-label">इंटरैक्टिव प्रयोग · कंपन और द्वैत की उत्पत्ति (भाग 5)</div>
+          <div class="state-toggle-bar" role="group" aria-label="ऊर्जा अवस्था चुनें">
+            <button type="button" id="btn-advaita" class="btn btn-active" onclick="setVibrationState('advaita')">अद्वैत (शून्य / स्थिर)</button>
+            <button type="button" id="btn-dvaita" class="btn" onclick="setVibrationState('dvaita')">द्वैत (कंपन / बिग बैंग)</button>
+          </div>
+
+          <div class="observation-well" id="vibration-well" style="display:grid;gap:var(--space-sm);">
+            <!-- Populated by JS -->
+          </div>
+
+          <div class="callout-brass">
+            <strong>विद्युत और बैटरी का उदाहरण (भाग 6):</strong> जैसे पावर हाउस से घर में करंट आता नहीं बल्कि इलेक्ट्रॉन केवल अपनी जगह हिलते हैं, और बैटरी में कुछ भरा नहीं जाता—उसी प्रकार ऊर्जा कभी नष्ट नहीं होती। जल घनीभूत होकर बर्फ बनता है, वैसे ही परम ऊर्जा घनीभूत होकर पदार्थ बनती है।
+          </div>
+        </div>
+      </div>
+
+      <!-- Three Great Laws -->
+      <div class="panel-low" style="display:grid;gap:var(--space-md);">
+        <div class="coord-label">विश्व के तीन बड़े नियम (भाग 20 एवं सारांश)</div>
+        <div class="card-grid">
+          <article class="panel" style="display:grid;gap:var(--space-xs);">
+            <span class="badge badge-brass">नियम 1</span>
+            <h3 style="margin:0;font-family:var(--font-headline);font-weight:500;">आकर्षण का नियम (Law of Attraction)</h3>
+            <p class="prose-muted">हम जैसे विचार और भावनाएं निरंतर पकड़कर रखते हैं, हमारी फ्रीक्वेंसी वैसी ही सेट हो जाती है और जीवन में सुख या दुख की परिस्थितियां व आत्माओं के विचार उसी के अनुरूप आकर्षित होते हैं।</p>
+          </article>
+          <article class="panel" style="display:grid;gap:var(--space-xs);">
+            <span class="badge badge-sky">नियम 2</span>
+            <h3 style="margin:0;font-family:var(--font-headline);font-weight:500;">स्वीकार भाव का नियम (Law of Allowing)</h3>
+            <p class="prose-muted">जब हम परम ऊर्जा के प्रति कृतज्ञता व्यक्त करते हैं, तो उसके द्वारा लाए गए परिवर्तनों को बिना विरोध के स्वीकार करना आवश्यक है—भले ही किसी पुरानी नौकरी या परिस्थिति का छूटना बेहतर रास्ते की शुरुआत हो।</p>
+          </article>
+          <article class="panel" style="display:grid;gap:var(--space-xs);">
+            <span class="badge badge-mint">नियम 3</span>
+            <h3 style="margin:0;font-family:var(--font-headline);font-weight:500;">सचेत सृजन का नियम (Deliberate Creation)</h3>
+            <p class="prose-muted">सचेत रूप से वास्तविकता रचने की शक्ति तभी पूर्ण रूप से कार्य करती है जब साधक अपनी सभी झूठी मान्यताओं और अहं को छोड़कर ‘शून्य’ (मोक्ष) की अवस्था को प्राप्त कर लेता है।</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Soul, Jiva, Rebirth & Choosing Parents -->
+    <section id="sec-soul" class="section-block reveal-item">
+      <div class="section-header">
+        <span class="badge badge-brass">भाग 7, 11 व 12 · आत्मा, जीव और पुनर्जन्म का सत्य</span>
+        <h2 class="section-title">पुनर्जन्म किसी व्यक्ति का नहीं होता—केवल संग्रहित यादों और सोल पार्ट्स की फ्रीक्वेंसी जुड़ती है</h2>
+        <p class="section-sub">
+          आदिमानव (नर-वानर) स्तर पर जैविक विकास के कारण शरीर के भीतर की ऊर्जा ने स्वयं को परम ऊर्जा से अलग मान लिया। इसी भूल से ‘आत्मा’ और इंद्रिय-अनुभवों के संग्रह ‘जीव’ का जन्म हुआ।
+        </p>
+      </div>
+
+      <div class="panel data-table-wrap">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>तत्व</th>
+              <th>वास्तविक ऊर्जा स्वरूप</th>
+              <th>कार्य एवं बंधन का कारण</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>परमात्मा (परम ऊर्जा)</strong></td>
+              <td>संपूर्ण 100% डार्क एनर्जी</td>
+              <td>संपूर्ण ब्रह्मांड का आधार; सभी अनुभव इसमें संग्रहित रहते हैं।</td>
+            </tr>
+            <tr>
+              <td><strong>भौतिक शरीर</strong></td>
+              <td>~5% घनीभूत पदार्थ</td>
+              <td>मृत्यु के बाद यह नष्ट होकर पुनः तत्वों में मिल जाता है; इसका कोई अस्तित्व शेष नहीं रहता।</td>
+            </tr>
+            <tr>
+              <td><strong>आत्मा</strong></td>
+              <td>शरीर को जीवित करने वाली ऊर्जा</td>
+              <td>भूलवश स्वयं को शरीर और परम ऊर्जा से अलग मान बैठती है।</td>
+            </tr>
+            <tr>
+              <td><strong>जीव</strong></td>
+              <td>अनुभवों और यादों का संग्रह</td>
+              <td>इंद्रियों से मिले प्रेम, नफरत, गरीबी-अमीरी या क्रोध की यादें, जिन्हें आत्मा ‘मैं’ मान लेती है।</td>
+            </tr>
+            <tr>
+              <td><strong>सोल पार्ट (Soul Part)</strong></td>
+              <td>किसी एक इच्छा या विचार का अंश</td>
+              <td>मृत्यु के बाद पूरी आत्मा की सभी यादें एक साथ न जाकर, छोटे-छोटे अंश (जैसे क्रोध, सिगरेट, लालच) दूसरे शरीरों में प्रवेश कर सकते हैं।</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Interactive Rebirth & Gear Frequency Simulator -->
+      <div class="split-asymmetric">
+        <div class="panel" style="display:grid;gap:var(--space-md);">
+          <div class="coord-label">इंटरैक्टिव मॉडल · हम अपना शरीर और माता-पिता कैसे चुनते हैं? (भाग 11)</div>
+          <p class="prose-muted">
+            जिस प्रकार मशीन के गियर (Gear) में निश्चित दांतों वाला पहिया केवल उसी आकार के दूसरे गियर में फिट बैठता है, उसी प्रकार मृत्यु से पूर्व हमने जो इच्छाएं दृढ़ता से पकड़ी हैं, वे अगले जन्म की फ्रीक्वेंसी तय करती हैं। नीचे दिए गए चरणों पर क्लिक कर पूरी प्रक्रिया देखें:
+          </p>
+          <div class="phase-pills" role="tablist" aria-label="पुनर्जन्म प्रक्रिया के चरण">
+            <button type="button" class="btn btn-active" role="tab" aria-selected="true" onclick="selectRebirthStage(0, this)">1. तीव्र इच्छा का कर्म बनना</button>
+            <button type="button" class="btn" role="tab" aria-selected="false" onclick="selectRebirthStage(1, this)">2. मृत्यु के बाद 3 गतियां</button>
+            <button type="button" class="btn" role="tab" aria-selected="false" onclick="selectRebirthStage(2, this)">3. जीवात्मा जगत में चयन</button>
+            <button type="button" class="btn" role="tab" aria-selected="false" onclick="selectRebirthStage(3, this)">4. गर्भ व जन्म के 9 माह</button>
+          </div>
+          <div id="rebirth-detail" class="observation-well">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <div class="panel-low" style="display:grid;gap:var(--space-md);">
+          <div class="coord-label">शास्त्रों में प्रमाण और लेखक का स्व-उदाहरण (भाग 11–12)</div>
+          <p class="prose-muted">
+            <strong>महाभारत की अंबा कथा:</strong> भीष्म से प्रतिशोध की तीव्र इच्छा के कारण अंबा की ऊर्जा दो भागों में बंटी और बदले के लिए राजा द्रुपद के यहां शिखंडी के रूप में जन्म लेकर वही प्रतिशोध पूरा किया।
+          </p>
+          <p class="prose-muted">
+            <strong>गरुड़ पुराण:</strong> प्रत्येक मनुष्य के साथ रहने वाले श्रवण आत्माएं (यमदूत) जीव को चित्रगुप्त (संग्रहित कर्मों की पुस्तक) के समक्ष ले जाते हैं—यह जीवात्मा जगत में समझदार आत्माओं द्वारा पुरानी गलतियां दिखाने की ही प्रक्रिया है।
+          </p>
+          <div class="callout-brass">
+            <strong>कुंडली में ‘योनि’ का रहस्य (भाग 9 व 11):</strong> जन्मकुंडली में लिखी पशु योनि (जैसे अश्व, गज, सर्प या स्राव/गाय योनि) यह दर्शाती है कि इस ऊर्जा को सर्वप्रथम किस पशु शरीर में परम ऊर्जा से अलग होने का बोध हुआ था।
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Seven Chakras & 14 Lokas -->
+    <section id="sec-chakras" class="section-block reveal-item">
+      <div class="section-header">
+        <span class="badge badge-mint">भाग 9, 10 व 22 · सात चक्रों और 14 लोकों का मनोविज्ञान</span>
+        <h2 class="section-title">चक्र कोई चमत्कारी अंग नहीं—वे हमारी इच्छाओं, भावनाओं और कंपन-आवृत्ति के सात स्तर हैं</h2>
+        <p class="section-sub">
+          प्रत्येक 7 वर्ष के अंतराल पर शरीर में एक चक्र प्राकृतिक रूप से जागृत होता है। एक ही चक्र में स्त्रैण चित्त (भोग/प्रदर्शन) और पुरुष चित्त (विरोध/हिंसा) की दो विपरीत समस्याएं होती हैं, जिनसे मिलकर 14 लोक (7 + 7) बनते हैं। किसी एक चक्र का चयन कर उसकी सतोरी कसौटी देखें:
+        </p>
+      </div>
+
+      <div class="chakra-bar" role="tablist" aria-label="सात चक्रों का चयन">
+        <button type="button" class="chakra-btn" role="tab" aria-selected="true" onclick="selectChakra(0, this)">
+          <span class="mono-num" style="font-size:0.75rem;color:var(--primary);">01 · ~7 वर्ष</span>
+          <span style="font-weight:600;">मूलाधार</span>
+        </button>
+        <button type="button" class="chakra-btn" role="tab" aria-selected="false" onclick="selectChakra(1, this)">
+          <span class="mono-num" style="font-size:0.75rem;color:var(--primary);">02 · ~14 वर्ष</span>
+          <span style="font-weight:600;">स्वाधिष्ठान</span>
+        </button>
+        <button type="button" class="chakra-btn" role="tab" aria-selected="false" onclick="selectChakra(2, this)">
+          <span class="mono-num" style="font-size:0.75rem;color:var(--primary);">03 · ~21 वर्ष</span>
+          <span style="font-weight:600;">मणिपुर</span>
+        </button>
+        <button type="button" class="chakra-btn" role="tab" aria-selected="false" onclick="selectChakra(3, this)">
+          <span class="mono-num" style="font-size:0.75rem;color:var(--primary);">04 · ~28 वर्ष</span>
+          <span style="font-weight:600;">अनाहत</span>
+        </button>
+        <button type="button" class="chakra-btn" role="tab" aria-selected="false" onclick="selectChakra(4, this)">
+          <span class="mono-num" style="font-size:0.75rem;color:var(--primary);">05 · ~35 वर्ष</span>
+          <span style="font-weight:600;">विशुद्ध</span>
+        </button>
+        <button type="button" class="chakra-btn" role="tab" aria-selected="false" onclick="selectChakra(5, this)">
+          <span class="mono-num" style="font-size:0.75rem;color:var(--primary);">06 · ब्रह्म</span>
+          <span style="font-weight:600;">आज्ञा</span>
+        </button>
+        <button type="button" class="chakra-btn" role="tab" aria-selected="false" onclick="selectChakra(6, this)">
+          <span class="mono-num" style="font-size:0.75rem;color:var(--primary);">07 · निर्वाण</span>
+          <span style="font-weight:600;">सहस्रार</span>
+        </button>
+      </div>
+
+      <div id="chakra-detail" class="panel" role="tabpanel" style="display:grid;gap:var(--space-md);">
+        <!-- Populated by JS -->
+      </div>
+
+      <details class="inline-drawer">
+        <summary>
+          <span>कुंडलिनी जागरण, शक्तिपात और आज्ञा चक्र से जुड़ी गंभीर चेतावनी (भाग 10 व 16)</span>
+          <span class="badge badge-coral">अति महत्वपूर्ण</span>
+        </summary>
+        <div style="display:grid;gap:var(--space-sm);">
+          <p class="prose-muted">
+            बिना समझ और सुरक्षा के कुंडलिनी जगाने या किसी गुरु-बाबा से शक्तिपात (माथे पर हाथ रखवाना) करवाने पर साधक अपने शरीर को पूरी तरह खुला छोड़ देता है। ऐसे में शरीर में कंपन, ठंडी हवा या सिद्धि जैसे जो अनुभव होते हैं, वे कुंडलिनी नहीं बल्कि जीवात्मा जगत की आत्माओं के प्रवेश के कारण होते हैं।
+          </p>
+          <p class="prose-muted">
+            लोग जिसे ‘तीसरी आंख (आज्ञा चक्र)’ की सिद्धि—जैसे टेलीपैथी या एस्ट्रल प्रोजेक्शन—समझते हैं, वह वास्तव में चौथे <strong>अनाहत चक्र</strong> का खेल है। यदि किसी को ऐसे अवांछित कंपन या माथे में दर्द हो, तो किसी नए बाबा के पास जाने के बजाय तुरंत ‘ब्लू हीलिंग लाइट’ और ‘परम चैतन्य ध्यान’ से स्वयं को प्रोटेक्ट कर ऊर्जा को नाभि के पास स्थिर करना चाहिए।
+          </p>
+        </div>
+      </details>
+
+      <details class="inline-drawer">
+        <summary>
+          <span>न्यूमैरोलॉजी (0 से 9 अंक यात्रा) और सात रंगों का ऊर्जा विज्ञान (भाग 13)</span>
+          <span class="badge badge-sky">संदर्भ</span>
+        </summary>
+        <div style="display:grid;gap:var(--space-sm);">
+          <p class="prose-muted">
+            न्यूमैरोलॉजी में <strong>0</strong> डार्क एनर्जी (शून्य) का प्रतीक है, <strong>1 से 7</strong> सात चक्रों की यात्रा, <strong>8</strong> शरीर छोड़ने के बाद की अवस्था और <strong>9</strong> पूर्णता को दर्शाता है। इस यात्रा में <strong>3</strong> (मणिपुर से संदेह और आध्यात्मिक खोज की शुरुआत), <strong>6</strong> (आज्ञा का मध्य पड़ाव) और <strong>9</strong> (पूर्णता) मुख्य पड़ाव हैं। इसी तरह प्रकाश के 7 रंग (लाल से बैंगनी) सात चक्रों की कंपन अवस्थाओं को दर्शाते हैं, जो मिलकर श्वेत प्रकाश और फिर पुनः ब्लैक/डार्क एनर्जी में विलीन होते हैं।
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <!-- Section 5: Spirits, Ghosts & Soul Part Defense -->
+    <section id="sec-spirits" class="section-block reveal-item">
+      <div class="section-header">
+        <span class="badge badge-coral">भाग 14 से 19 · भूत-प्रेत, चुड़ैल-डायन और सोल पार्ट से बचाव</span>
+        <h2 class="section-title">कोई डरावना राक्षस नहीं—यह एक ही ऊर्जा की विभिन्न तीव्रता (वोल्टेज) और विचारों की आवृत्ति है</h2>
+        <p class="section-sub">
+          जैसे घर की बिजली 5–12 वोल्ट (कंप्यूटर), 240 वोल्ट (झटका) और 25,000 वोल्ट (ट्रेन केबल) के रूप में अलग-अलग असर दिखाती है, वैसे ही परम ऊर्जा, आत्मा, पुरुष/स्त्रैण प्रेतात्मा और सोल पार्ट एक ही ऊर्जा की घटती तीव्रताएं हैं।
+        </p>
+      </div>
+
+      <!-- Energy Voltage Scale SVG -->
+      <div class="panel">
+        <div class="coord-label" style="margin-bottom:var(--space-sm);">ऊर्जा तीव्रता (वोल्टेज) स्पेक्ट्रम — भाग 15</div>
+        <div style="overflow-x:auto;">
+          <svg viewBox="0 0 820 110" width="100%" height="110" style="min-width:580px;" aria-label="ऊर्जा तीव्रता स्पेक्ट्रम: सोल पार्ट से परम ऊर्जा तक">
+            <line x1="40" y1="48" x2="780" y2="48" stroke="var(--outline-variant)" stroke-width="4" stroke-linecap="round" />
+            <line x1="40" y1="48" x2="780" y2="48" stroke="var(--primary)" stroke-width="2" stroke-dasharray="6 4" />
+
+            <!-- Nodes -->
+            <circle cx="70" cy="48" r="7" fill="var(--data-context)" />
+            <text x="70" y="25" text-anchor="middle" fill="var(--on-surface-variant)" font-family="var(--font-body)" font-size="12">सोल पार्ट</text>
+            <text x="70" y="80" text-anchor="middle" fill="var(--on-surface-variant)" font-family="var(--font-mono)" font-size="11">अदृश्य विचार अंश</text>
+
+            <circle cx="240" cy="48" r="8" fill="var(--data-2)" />
+            <text x="240" y="25" text-anchor="middle" fill="var(--data-2)" font-family="var(--font-body)" font-size="12">स्त्रैण प्रेतात्मा</text>
+            <text x="240" y="80" text-anchor="middle" fill="var(--on-surface-variant)" font-family="var(--font-mono)" font-size="11">प्रेम / सिद्धि लोभ</text>
+
+            <circle cx="410" cy="48" r="9" fill="var(--data-4)" />
+            <text x="410" y="25" text-anchor="middle" fill="var(--data-4)" font-family="var(--font-body)" font-size="12">पुरुष प्रेतात्मा</text>
+            <text x="410" y="80" text-anchor="middle" fill="var(--on-surface-variant)" font-family="var(--font-mono)" font-size="11">क्रोध / विरोध (240V)</text>
+
+            <circle cx="580" cy="48" r="10" fill="var(--data-3)" />
+            <text x="580" y="25" text-anchor="middle" fill="var(--data-3)" font-family="var(--font-body)" font-size="12">आत्मा / देवदूत</text>
+            <text x="580" y="80" text-anchor="middle" fill="var(--on-surface-variant)" font-family="var(--font-mono)" font-size="11">संपूर्ण जीव स्मृति</text>
+
+            <circle cx="750" cy="48" r="12" fill="var(--data-1)" />
+            <text x="750" y="25" text-anchor="middle" fill="var(--primary)" font-family="var(--font-body)" font-size="12" font-weight="600">परम ऊर्जा</text>
+            <text x="750" y="80" text-anchor="middle" fill="var(--primary)" font-family="var(--font-mono)" font-size="11">सर्वोच्च (25kV+)</text>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Interactive 5 Types Explorer -->
+      <div class="split-rail">
+        <div class="selector-list" role="tablist" aria-label="पांच प्रकार की बाधाएं">
+          <button type="button" class="selector-item" role="tab" aria-selected="true" onclick="selectSpiritType(0, this)">
+            <span class="selector-meta">प्रकार 01 · भाग 15</span>
+            <span class="selector-title">पुरुष चित्त की पूरी प्रेतात्मा</span>
+          </button>
+          <button type="button" class="selector-item" role="tab" aria-selected="false" onclick="selectSpiritType(1, this)">
+            <span class="selector-meta">प्रकार 02 · भाग 16</span>
+            <span class="selector-title">स्त्रैण चित्त की पूरी प्रेतात्मा</span>
+          </button>
+          <button type="button" class="selector-item" role="tab" aria-selected="false" onclick="selectSpiritType(2, this)">
+            <span class="selector-meta">प्रकार 03 · भाग 17</span>
+            <span class="selector-title">चुड़ैल (अति प्रोटेक्टिव ऊर्जा)</span>
+          </button>
+          <button type="button" class="selector-item" role="tab" aria-selected="false" onclick="selectSpiritType(3, this)">
+            <span class="selector-meta">प्रकार 04 · भाग 17</span>
+            <span class="selector-title">डायन (बॉसिंग / नियंत्रक ऊर्जा)</span>
+          </button>
+          <button type="button" class="selector-item" role="tab" aria-selected="false" onclick="selectSpiritType(4, this)">
+            <span class="selector-meta">प्रकार 05 · भाग 18–19</span>
+            <span class="selector-title">सोल पार्ट (मृत व जीवित लोगों के विचार)</span>
+          </button>
+        </div>
+
+        <div id="spirit-detail" class="panel" role="tabpanel">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Universal 3-Step Defense Rules -->
+      <div class="panel-low" style="display:grid;gap:var(--space-md);">
+        <div class="coord-label">स्थायी आत्म-सुरक्षा के 3 व्यावहारिक सूत्र (भाग 12, 15, 19)</div>
+        <div class="card-grid">
+          <div class="panel" style="display:grid;gap:var(--space-xs);">
+            <strong style="color:var(--primary);">1. सात चक्रों के विचारों पर कोई कर्म न करना</strong>
+            <p class="prose-muted">हर 28 दिन में भय, क्रोध, वासना या लालच के विचार दोहराते हैं। जब विचार आएं तो कोई प्रतिक्रिया या कर्म न करें—बस साक्षी बनकर बैठे रहें। कर्म न करने से पुराना लेयर टूट जाता है।</p>
+          </div>
+          <div class="panel" style="display:grid;gap:var(--space-xs);">
+            <strong style="color:var(--tertiary);">2. सोच की फ्रीक्वेंसी बदलना और प्रोटेक्शन</strong>
+            <p class="prose-muted">नारायण बलि या झाड़-फूंक से आत्मा केवल अस्थायी रूप से हटती है; यदि आपकी सोच (जैसे संपत्ति का विवाद या घृणा) वही रही, तो उसी फ्रीक्वेंसी की दूसरी आत्मा आ जाएगी। अतः सोच बदलें और सुरक्षा कवच धारण करें।</p>
+          </div>
+          <div class="panel" style="display:grid;gap:var(--space-xs);">
+            <strong style="color:var(--data-3);">3. स्नान, जल और सक्रिय ध्यान से शुद्धि</strong>
+            <p class="prose-muted">ओशो का सक्रिय ध्यान या परम चैतन्य ध्यान भीतर पड़े सोल पार्ट्स को बाहर निकालता है। स्नान करते व जल पीते समय यह भाव रखें कि सकारात्मक ऊर्जा अंदर जा रही है और नकारात्मकता बह रही है।</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: 15 Steps of Meditation & 7 Satoris -->
+    <section id="sec-meditation" class="section-block reveal-item">
+      <div class="section-header">
+        <span class="badge badge-sky">भाग 21, 22 व 23 · ध्यान, समाधि, सात सतोरी और संबोधि</span>
+        <h2 class="section-title">ध्यान की विधि से महापरिनिर्वाण तक के 15 चरण और शून्य का प्रत्यक्ष अनुभव</h2>
+        <p class="section-sub">
+          पालथी मारकर बैठ जाना ही ध्यान नहीं है। ध्यान का वास्तविक अर्थ है—अपने विचारों को देखना और उनमें नए विचार न जोड़ते हुए उन्हें समझ से विदा करना। इस संपूर्ण यात्रा में लगभग 12 से 15 वर्ष के धैर्य की आवश्यकता हो सकती है। किसी भी चरण का चयन करें:
+        </p>
+      </div>
+
+      <div class="step-grid" role="tablist" aria-label="ध्यान के 15 चरण">
+        <button type="button" class="step-node" role="tab" aria-selected="true" onclick="selectMedStep(0, this)">
+          <span class="mono-num" style="font-size:0.72rem;color:var(--tertiary);">चरण 01</span>
+          <span style="font-weight:600;font-size:0.9rem;">ध्यान की 5 विधियां</span>
+        </button>
+        <button type="button" class="step-node" role="tab" aria-selected="false" onclick="selectMedStep(1, this)">
+          <span class="mono-num" style="font-size:0.72rem;color:var(--tertiary);">चरण 02</span>
+          <span style="font-weight:600;font-size:0.9rem;">योग निद्रा</span>
+        </button>
+        <button type="button" class="step-node" role="tab" aria-selected="false" onclick="selectMedStep(2, this)">
+          <span class="mono-num" style="font-size:0.72rem;color:var(--tertiary);">चरण 03</span>
+          <span style="font-weight:600;font-size:0.9rem;">ध्यान घटित होना</span>
+        </button>
+        <button type="button" class="step-node" role="tab" aria-selected="false" onclick="selectMedStep(3, this)">
+          <span class="mono-num" style="font-size:0.72rem;color:var(--tertiary);">चरण 04</span>
+          <span style="font-weight:600;font-size:0.9rem;">सबीज / सविकल्प समाधि</span>
+        </button>
+        <button type="button" class="step-node" role="tab" aria-selected="false" onclick="selectMedStep(4, this)">
+          <span class="mono-num" style="font-size:0.72rem;color:var(--primary);">चरण 05–11</span>
+          <span style="font-weight:600;font-size:0.9rem;">सात सतोरी (7 कसौटियां)</span>
+        </button>
+        <button type="button" class="step-node" role="tab" aria-selected="false" onclick="selectMedStep(5, this)">
+          <span class="mono-num" style="font-size:0.72rem;color:var(--data-3);">चरण 12</span>
+          <span style="font-weight:600;font-size:0.9rem;">शून्य का दिखना</span>
+        </button>
+        <button type="button" class="step-node" role="tab" aria-selected="false" onclick="selectMedStep(6, this)">
+          <span class="mono-num" style="font-size:0.72rem;color:var(--data-3);">चरण 13</span>
+          <span style="font-weight:600;font-size:0.9rem;">निर्बीज / निर्विकल्प समाधि</span>
+        </button>
+        <button type="button" class="step-node" role="tab" aria-selected="false" onclick="selectMedStep(7, this)">
+          <span class="mono-num" style="font-size:0.72rem;color:var(--primary);">चरण 14</span>
+          <span style="font-weight:600;font-size:0.9rem;">संबोधि / मोक्ष / निर्वाण</span>
+        </button>
+        <button type="button" class="step-node" role="tab" aria-selected="false" onclick="selectMedStep(8, this)">
+          <span class="mono-num" style="font-size:0.72rem;color:var(--primary);">चरण 15</span>
+          <span style="font-weight:600;font-size:0.9rem;">महापरिनिर्वाण</span>
+        </button>
+      </div>
+
+      <div id="med-step-detail" class="panel" role="tabpanel">
+        <!-- Populated by JS -->
+      </div>
+
+      <div class="split-asymmetric">
+        <div class="panel-low" style="display:grid;gap:var(--space-sm);">
+          <div class="coord-label">ज़ेन के 10 बैल और मोक्ष के 7 यथार्थ (भाग 23)</div>
+          <p class="prose-muted">
+            बौद्ध ज़ेन परंपरा में ‘दस बैल’ के चित्र साधक की यात्रा को दर्शाते हैं—खोज, पगचिह्न दिखना, बैल को पकड़ना, बैल की सवारी कर घर लौटना (सिद्धियां मिलना), और फिर <strong>सातवें व आठवें चित्र में बैल तथा स्वयं ‘स्व’ दोनों का अतिक्रमण कर शून्य में प्रवेश</strong> करना।
+          </p>
+          <p class="prose-muted">
+            <strong>मोक्ष की कसौटी:</strong> मोक्ष मिलने पर व्यक्ति अलौकिक चमत्कार करने वाला सर्वशक्तिमान नहीं बनता, न ही वह बिना किसी कारण दूसरों के अपराधों की जांच करता फिरता है। वह बस <em>“यह सब माया है और मैं परम ऊर्जा हूं”</em> के प्रत्यक्ष अनुभव के साथ बिना द्वंद्व के सहज जीवन जीता है।
+          </p>
+        </div>
+        <div class="panel-low" style="display:grid;gap:var(--space-sm);">
+          <div class="coord-label">7वीं सृष्टि और मुक्ति का गणित (भाग 23)</div>
+          <p class="prose-muted">
+            परम ऊर्जा के लगभग 5% भाग से सृष्टि का निर्माण होता है, और एक महायुग में केवल लगभग <strong>0.01%</strong> ऊर्जा ही यह समझ पाती है कि “मैं ही परमात्मा हूं”। जो ऊर्जा मुक्त हो जाती है, वह अगली सृष्टि में पुनः जन्म-मरण के चक्र में वापस नहीं आती। इस प्रकार 6 बार सृष्टि बन और मिट चुकी है, तथा वर्तमान 7वीं सृष्टि तक लगभग 0.07% अंश मुक्त होने की ओर अग्रसर हैं।
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Joyful Life, Bardo Thodol & Anayasena Maranam -->
+    <section id="sec-death" class="section-block reveal-item">
+      <div class="section-header">
+        <span class="badge badge-brass">भाग 26 व 28 · आनंदमय जीवन, न्यू डाइट सिस्टम और प्रसन्नतापूर्वक मृत्यु</span>
+        <h2 class="section-title">मृत्यु कोई अंत नहीं, केवल पुराने वस्त्र बदलकर परम ऊर्जा में विश्राम करने की कला है</h2>
+        <p class="section-sub">
+          भय तब उत्पन्न होता है जब हम शरीर को ही सब कुछ मान लेते हैं। यदि जीवन के तीनों तलों—शरीर, मन और आत्मा—को संतुलित कर लिया जाए और मृत्यु को समझ लिया जाए, तो जीवन और मृत्यु दोनों उत्सव बन जाते हैं।
+        </p>
+      </div>
+
+      <!-- 3 Levels of Joyful Living -->
+      <div class="card-grid">
+        <article class="panel" style="display:grid;gap:var(--space-xs);">
+          <span class="badge badge-mint">तल 1 · शरीर</span>
+          <h3 style="margin:0;font-family:var(--font-headline);font-weight:500;">न्यू डाइट सिस्टम (NDS) व संयम</h3>
+          <p class="prose-muted">केवल मंत्र या दान से शरीर स्वस्थ नहीं होता। खान-पान सुधारें, न्यू डाइट सिस्टम के अनुरूप प्राकृतिक आहार अपनाएं, गलत आदतें छोड़ें और शरीर में ब्लू हीलिंग लाइट का अनुभव करें।</p>
+        </article>
+        <article class="panel" style="display:grid;gap:var(--space-xs);">
+          <span class="badge badge-sky">तल 2 · मन</span>
+          <h3 style="margin:0;font-family:var(--font-headline);font-weight:500;">बाहरी विचारों का त्याग</h3>
+          <p class="prose-muted">सात चक्रों से उत्पन्न होने वाले भय, लोभ और तुलना के विचारों को अपना न मानें। जीवित रहते हुए इतना प्रेम दे दें कि किसी के जाने के बाद कोई शिकायत या पश्चाताप शेष न रहे।</p>
+        </article>
+        <article class="panel" style="display:grid;gap:var(--space-xs);">
+          <span class="badge badge-brass">तल 3 · आत्मा</span>
+          <h3 style="margin:0;font-family:var(--font-headline);font-weight:500;">परम ऊर्जा के प्रति पूर्ण समर्पण</h3>
+          <p class="prose-muted">हम स्वयं ही अपने लिए परमात्मा हैं। मृत्यु और विनाश को शिव-तांडव के रूप में ऊर्जा के रूपांतरण की तरह स्वीकार कर निर्भय होकर वर्तमान क्षण में जीना।</p>
+        </article>
+      </div>
+
+      <!-- Bardo Thodol 6 Stages + Anayasena Maranam Prayer -->
+      <div class="split-asymmetric">
+        <div class="panel" style="display:grid;gap:var(--space-md);">
+          <div class="coord-label">तिब्बती ‘बारदो थोडल’ (सुनकर मुक्ति) के 6 समय — भाग 28</div>
+          <p class="prose-muted">
+            ‘बारदो’ अर्थात मृत्यु के बाद की स्थिति और ‘थोडल’ अर्थात सुनकर मुक्ति। ऊर्जा को शरीर से अलग होने का बोध कराने के 6 अवसर बताए गए हैं:
+          </p>
+          <div class="phase-pills" role="tablist" aria-label="बारदो थोडल के 6 समय">
+            <button type="button" class="btn btn-active" role="tab" aria-selected="true" onclick="selectBardoStage(0, this)">1. गर्भ में</button>
+            <button type="button" class="btn" role="tab" aria-selected="false" onclick="selectBardoStage(1, this)">2. स्वप्न में</button>
+            <button type="button" class="btn" role="tab" aria-selected="false" onclick="selectBardoStage(2, this)">3. ध्यान आनंद</button>
+            <button type="button" class="btn" role="tab" aria-selected="false" onclick="selectBardoStage(3, this)">4. मृत्यु घड़ी</button>
+            <button type="button" class="btn" role="tab" aria-selected="false" onclick="selectBardoStage(4, this)">5. मृत्यु के तुरंत बाद</button>
+            <button type="button" class="btn" role="tab" aria-selected="false" onclick="selectBardoStage(5, this)">6. नया गर्भ तलाश</button>
+          </div>
+          <div id="bardo-detail" class="observation-well">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+
+        <div class="panel-low" style="display:grid;gap:var(--space-md);">
+          <div class="coord-label">अनायासेन मरणं प्रार्थना (4 पंक्तियों का मर्म) — भाग 28</div>
+          <p class="prose-muted" style="font-size:0.9375rem;">
+            लगभग 300 वर्ष पूर्व दक्षिण भारत के एक संत द्वारा रचित इस प्रार्थना के माध्यम से सहज जीवन और सहज मृत्यु की याचना की जाती है:
+          </p>
+          <div style="display:grid;gap:var(--space-sm);">
+            <div class="observation-well">
+              <strong style="color:var(--primary);">1. अनायासेन मरणम्</strong>
+              <p class="prose-muted" style="margin-top:4px;font-size:0.9375rem;">बिना किसी लंबी शारीरिक पीड़ा या कष्ट के, अत्यंत सरलता से शरीर छूट जाए।</p>
+            </div>
+            <div class="observation-well">
+              <strong style="color:var(--primary);">2. विना दैन्येन जीवनम्</strong>
+              <p class="prose-muted" style="margin-top:4px;font-size:0.9375rem;">वर्षों तक अस्पताल के बिस्तर या वेंटिलेटर की दयनीय अवस्था में न पड़े रहना पड़े—स्वस्थ जीवन हो (जो लोग वस्तुओं व शरीर को कसकर पकड़े रहते हैं, उनकी ऊर्जा नहीं छूट पाती)।</p>
+            </div>
+            <div class="observation-well">
+              <strong style="color:var(--primary);">3. देहांते तव सानिध्यम्</strong>
+              <p class="prose-muted" style="margin-top:4px;font-size:0.9375rem;">मृत्यु के समय परम ऊर्जा का सानिध्य और जीवन भर प्रेम दिए हुए प्रियजन पास हों, अकेलापन न हो।</p>
+            </div>
+            <div class="observation-well">
+              <strong style="color:var(--primary);">4. देहि मे परमेश्वरः</strong>
+              <p class="prose-muted" style="margin-top:4px;font-size:0.9375rem;">यह आंतरिक बोध बना रहे कि आत्मा ही परमात्मा है—मैं ही परमेश्वर का ऊर्जा स्वरूप हूं।</p>
+            </div>
+          </div>
+          <p class="prose-muted" style="font-size:0.9rem;">
+            <strong>चिता ध्यान (विज्ञान भैरव तंत्र, धारणा 28–29):</strong> अपने शरीर को चिता पर जलते हुए अनुभव करना केवल एक यांत्रिक प्रक्रिया नहीं, बल्कि इस वास्तविकता को स्वीकार करने का अभ्यास है कि मृत्यु निश्चित है।
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: Interactive Daily Sadhana & Guided Blue Healing Light Timer -->
+    <section id="sec-sadhana" class="section-block reveal-item">
+      <div class="section-header">
+        <span class="badge badge-sky">दैनिक साधना अभ्यास · प्रोटेक्शन विधि 1, ब्लू हीलिंग लाइट व रात्रि ध्यान (विधि 5)</span>
+        <h2 class="section-title">दैनिक सुरक्षा कवच, नाभि शुद्धि और रात्रि कृतज्ञता ध्यान का व्यावहारिक अभ्यास</h2>
+        <p class="section-sub">
+          नीचे दी गई तीन मुख्य विधियों में से किसी एक का चयन कर मार्गदर्शित उल्टी गिनती (3 से 1 और 10 से 1) और श्वास लय के साथ स्वयं, घर और परिवार को परम ऊर्जा के सुरक्षा घेरे में स्थापित करें।
+        </p>
+      </div>
+
+      <div class="meditation-studio">
+        <div class="phase-pills" role="tablist" aria-label="ध्यान विधि चुनें">
+          <button type="button" id="sad-btn-0" class="btn btn-active" role="tab" aria-selected="true" onclick="selectSadhanaMode(0)">प्रोटेक्शन विधि 1 (सुरक्षा कवच)</button>
+          <button type="button" id="sad-btn-1" class="btn" role="tab" aria-selected="false" onclick="selectSadhanaMode(1)">ब्लू हीलिंग लाइट (शरीर व घर)</button>
+          <button type="button" id="sad-btn-2" class="btn" role="tab" aria-selected="false" onclick="selectSadhanaMode(2)">प्रोटेक्शन विधि 5 (रात्रि ध्यान)</button>
+        </div>
+
+        <div class="split-asymmetric">
+          <div id="sadhana-script-panel" style="display:grid;gap:var(--space-md);">
+            <!-- Populated by JS -->
+          </div>
+
+          <div class="halo-display">
+            <div class="coord-label" id="timer-phase-label">अभ्यास प्रारंभ करने के लिए तैयार</div>
+            <div id="halo-ring" class="halo-ring">
+              <span class="timer-readout" id="timer-readout">03:00</span>
+              <span style="font-size:0.75rem;color:var(--tertiary);" id="breath-cue">सामान्य श्वास</span>
+            </div>
+            <p id="live-affirmation" class="prose-muted" style="font-size:0.9375rem;text-align:center;max-width:38ch;">
+              आरामदायक आसन में बैठें या लेटें। आँखें बंद कर गहरी सांस लें और धीरे-धीरे बाहर छोड़ें।
+            </p>
+            <div style="display:flex;flex-wrap:wrap;gap:var(--space-sm);justify-content:center;">
+              <button type="button" id="timer-toggle-btn" class="btn btn-primary" onclick="toggleMeditationTimer()">ध्यान प्रारंभ करें</button>
+              <button type="button" class="btn" onclick="resetMeditationTimer()">रीसेट करें</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: 30-Part Complete Directory -->
+    <section id="sec-directory" class="section-block reveal-item">
+      <div class="section-header">
+        <span class="badge badge-brass">संपूर्ण 30-भागीय मानचित्र · विषयवार अन्वेषण</span>
+        <h2 class="section-title">आध्यात्मिक ज्ञान कोष के 30 भागों और ध्यान विधियों की संपूर्ण निर्देशिका</h2>
+        <p class="section-sub">
+          पूरी श्रृंखला के तार्किक प्रवाह को विषय के अनुसार फ़िल्टर करें या कीवर्ड (जैसे डार्क एनर्जी, चक्र, सोल पार्ट, सतोरी, मृत्यु) द्वारा किसी भी भाग को खोजें।
+        </p>
+      </div>
+
+      <div class="panel">
+        <div class="filter-controls">
+          <div class="field-group">
+            <label for="dir-search" class="field-label">अध्याय या सिद्धांत खोजें</label>
+            <input type="search" id="dir-search" class="field-input" placeholder="उदाहरण: चक्र, डार्क एनर्जी, सोल पार्ट, मोक्ष, मृत्यु..." oninput="filterDirectory()">
+          </div>
+          <div class="field-group">
+            <label for="dir-cluster" class="field-label">विषय श्रेणी (Cluster)</label>
+            <select id="dir-cluster" class="field-select" onchange="filterDirectory()">
+              <option value="all">सभी 30 भाग एवं ध्यान विधियां</option>
+              <option value="cosmos">1. आधार, डार्क एनर्जी और सृष्टि (भाग 1–8)</option>
+              <option value="chakras">2. जीव लोक, चक्र और पुनर्जन्म (भाग 9–13)</option>
+              <option value="spirits">3. प्रेत आत्माएं और सोल पार्ट सुरक्षा (भाग 14–19)</option>
+              <option value="moksha">4. विश्व नियम, ध्यान, सतोरी व मोक्ष (भाग 20–25)</option>
+              <option value="living">5. आनंदमय जीवन, मृत्यु व दैनिक ध्यान (भाग 26–30 + विधियां)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div id="directory-count" class="coord-label">कुल 33 प्रविष्टियां प्रदर्शित</div>
+      <div id="directory-grid" class="directory-grid">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- Sources Footer -->
+    <footer class="sources-footer">
+      <div class="coord-label">स्रोत एवं आधार सामग्री</div>
+      <p style="margin:0;">
+        यह संवादात्मक ज्ञान संहिता ‘ओजस हीलिंग’ (Ojas Healing) के 30-भागों वाले ‘आध्यात्मिक ज्ञान कोष’ वीडियो प्रतिलेखों (विशेष रूप से भाग 1, 4–23, 26, 28 के उपलब्ध अंशों), आध्यात्मिक ज्ञान सारांश, तथा ‘ब्लू हीलिंग लाइट गाइडेड मेडिटेशन’, ‘प्रोटेक्शन विधि 1’ और ‘प्रोटेक्शन विधि 5 (रात्रि ध्यान)’ पर आधारित है। जिन मध्यवर्ती भागों के पूर्ण प्रतिलेख स्रोत में उपलब्ध नहीं थे, उनका केवल संबद्ध वीडियो संदर्भों के आधार पर विषयानुक्रम में उल्लेख किया गया है।
+      </p>
+    </footer>
+
+  </main>
+
+  <script>
+    // Data Arrays (all string literals use backticks for safety)
+    const JOURNEY_STEPS = [
+      {
+        era: `1971 – 1978 (बाल्यकाल)`,
+        title: `जन्म और 6 वर्ष की आयु के दो अप्रत्याशित विचार`,
+        body: `वर्ष 1971 में एक आध्यात्मिक कुटुंब में अजय नाम से जन्म हुआ। बचपन शांत स्वभाव का था और पढ़ाई में कम रुचि थी। मात्र 6 वर्ष की आयु (1977–78) में—जब न इंटरनेट था न कोई बाहरी माध्यम—मन में दो प्रमुख विचार निरंतर चलते थे: पहला, “संभोग से ऊपर उठना है” और दूसरा, “आत्महत्या नहीं करनी है”। बाद के शोध से स्पष्ट हुआ कि यह पूर्व जन्मों की संग्रहित तंत्र-साधना व आर्थिक आत्महत्या की यादों का प्रभाव था।`
+      },
+      {
+        era: `1980 – 1984 (किशोरावस्था प्रारंभ)`,
+        title: `आत्मा का प्रकाश और बाघ के नख का जादू-टोना`,
+        body: `9–10 वर्ष की आयु में एक रात सोते समय माथे के पास से एक प्रकाश निकला और कमरे में घूमकर खिड़की से बाहर चला गया। कुछ समय बाद किसी ने माँ को सोने में जड़ा ‘बाघ का नख’ दिया, जो वास्तव में जादू-टोने से अभिमंत्रित था। इसके आते ही घर के सभी पुरुष असाध्य रूप से बीमार पड़ने लगे। लगातार तीन रात माँ को नींद में एक आंतरिक आवाज सुनाई दी कि “बाघ के नख को फेंक दें, वही समस्या की जड़ है”। उसे नाली में फेंकते ही शाम तक सभी पूर्णतः स्वस्थ हो गए।`
+      },
+      {
+        era: `1986 – 1997 (प्रचार एवं गृहस्थ जीवन)`,
+        title: `धर्म के लिए पढ़ाई त्याग, कंप्यूटर शिक्षा और पिता का निधन`,
+        body: `माता-पिता से मिले धर्म में यह गहरी मान्यता थी कि वर्ष 2000 में जगत का अंत हो जाएगा। इसी विश्वास से 15–16 वर्ष की उम्र में स्कूल छोड़कर धर्म प्रचार शुरू कर दिया। 1990 में शौकिया कंप्यूटर सीखा और 1992 में प्रेम विवाह किया—तब यह प्रश्न उठा कि क्या परमात्मा प्रेम के विरुद्ध है या केवल समाज। 1997 में पिता की मृत्यु के बाद आर्थिक संकट गहराया और बार-बार पिता को कंधे पर उठाकर दलदल में फंसने के स्वप्न आने लगे।`
+      },
+      {
+        era: `2000 – 2004 (सत्य की कसौटी)`,
+        title: `भविष्यवाणी का असत्य होना और बिचोलियों से मोहभंग`,
+        body: `जब वर्ष 2000 बीत गया और संसार का अंत नहीं हुआ, तो धर्म के अगुवाओं ने अपनी बात बदल दी। इससे आस्था को गहरा आघात लगा। 2000 से 2004 तक गहन शोध करने पर ज्ञात हुआ कि धार्मिक ग्रंथ कुछ कहते हैं और बीच के गुरु/बिचोलिए अपने स्वार्थ के लिए कुछ और सिखाते हैं। 2004 में पारिवारिक धर्म छोड़ने पर पूरा समाज और मित्र छूट गए—केवल चार सदस्य (स्वयं, माँ, पत्नी व पुत्र) रह गए।`
+      },
+      {
+        era: `2005 – 2009 (समन्वय व संन्यास)`,
+        title: `विविध धर्म-पंथों की दीक्षा और ‘आनंद स्वरूप’ नाम प्राप्ति`,
+        body: `हिंदू, जैन, बौद्ध, ईसाई, मुस्लिम के साथ-साथ हरे कृष्ण, रामकृष्ण मिशन, ब्रह्माकुमारीज, स्वामीनारायण, गायत्री परिवार और दादा भगवान आदि पंथों का अध्ययन व दीक्षा ली। अंततः आचार्य रजनीश (ओशो) के 3 से 4 हजार प्रवचन सुनकर लगा कि यह मेरे अपने जीवन का स्पष्टीकरण है। वर्ष 2009 में संन्यास लेने पर ‘आनंद स्वरूप’ नाम प्राप्त हुआ—और आगे चलकर आर्थिक संकट के बीच पूर्ण समर्पण से ध्यान में सत्य प्रकाशित हुआ।`
+      }
+    ];
+
+    const VIBRATION_STATES = {
+      advaita: {
+        badge: `अद्वैत (शून्य अवस्था)`,
+        color: `var(--tertiary)`,
+        desc: `जब डार्क एनर्जी (परम ऊर्जा) में कोई कंपन या हलचल नहीं होती, तब वह पूर्ण स्थिर ‘शून्य’ या ‘अद्वैत’ कहलाती है। यहां न कोई आकार है, न समय और न ही सुख-दुख का द्वंद्व। ध्यान की सर्वोच्च ‘निर्विकल्प समाधि’ और ‘महापरिनिर्वाण’ इसी स्थिर अवस्था में लय होने का अनुभव है।`
+      },
+      dvaita: {
+        badge: `द्वैत (कंपन व सृष्टि निर्माण)`,
+        color: `var(--primary)`,
+        desc: `परम ऊर्जा अपनी इच्छाशक्ति से स्वयं में कंपन (Vibration) उत्पन्न करती है। जब यह दोनों ओर हिलती है, तो ‘द्वैत’ बनता है—एक ओर स्त्रैण चित्त (प्रकृति का आनंद लेने की वृत्ति) और दूसरी ओर पुरुष चित्त (प्रकृति से लड़ने की वृत्ति)। इसी के विस्फोट (बिग बैंग) से प्रकाश, डार्क मैटर और 5% भौतिक पदार्थ निर्मित होता है।`
+      }
+    };
+
+    const REBIRTH_STAGES = [
+      {
+        title: `1. तीव्र इच्छा ही वास्तविक कर्म बनती है (लड़का A-B-C उदाहरण)`,
+        body: `मान लीजिए गरीब ‘लड़का A’ लड़की B से विवाह करना चाहता है, पर B अमीर ‘लड़का C’ से विवाह कर लेती है। यदि लड़का A जीवन भर प्रतिशोध में जलता रहे और यह सोचे कि “मैं दोनों को मार डालूंगा और अमीर बनूंगा”, तो यह लगातार सोचना ही उसका मानसिक कर्म बन जाता है—भले ही उसने वर्तमान शरीर में हत्या न की हो।`
+      },
+      {
+        title: `2. मृत्यु के बाद ऊर्जा के 3 संभावित मार्ग`,
+        body: `मृत्यु होने पर (क) पूरी आत्मा या उसके कुछ ‘सोल पार्ट्स’ किसी अन्य जीवित मनुष्य के शरीर में प्रवेश कर सकते हैं; (ख) आत्मा अपने शरीर छूटने को समझ न पाने के कारण उसी स्थान पर भटकती रहे; या (ग) समझदार आत्मा सीधे जीवात्मा जगत में चली जाए। भटकती आत्मा को लेने के लिए स्त्रैण चित्त के उच्च लोक से आत्माएं आती हैं—जिसे परंपरा में ‘यमदूत का आना’ कहा गया है।`
+      },
+      {
+        title: `3. जीवात्मा जगत: सांत्वना, समीक्षा और संभावनाओं का चयन`,
+        body: `जीवात्मा जगत में पहले आत्मा पर नीली ऊर्जा (Blue Light) की सांत्वना बरसाई जाती है, फिर पुरानी समझदार आत्माएं उसे जीवन की गलतियां दिखाती हैं और चार संभावित नए जीवन (माफ करना, अकेले को मारना, या दोनों को मारना आदि) प्रस्तुत करती हैं। गियर के दांतों के समान, उसकी पिछली तीव्र इच्छा केवल चौथी (प्रतिशोध वाली) फ्रीक्वेंसी में ही फिट बैठती है—अतः उसे उसी के अनुरूप कठिन माता-पिता वाला जन्म मिलता है, पर साथ ही मार्गदर्शक संकेत (जैसे बार-बार गाड़ी पंक्चर होना) भी तय किए जाते हैं।`
+      },
+      {
+        title: `4. गर्भ में 9 माह और जन्म के बाद यादों का उतरना`,
+        body: `जब चुनी हुई माँ गर्भवती होती है, तो कुछ महीनों बाद भ्रूण में केवल ऊर्जा (आत्मा) प्रवेश करती है। 9 महीने तक पिछली यादें भ्रूण के अंदर नहीं बल्कि माँ के चारों ओर घूमती रहती हैं। शिशु के जन्म के बाद वे यादें शरीर में उतरती हैं—इसी अंतराल के कारण हमें पिछले जन्मों की सभी बातें स्पष्ट याद नहीं रहतीं।`
+      }
+    ];
+
+    const CHAKRAS = [
+      {
+        num: `01`, name: `मूलाधार चक्र`, age: `~7 वर्ष की आयु`, body: `भौतिक शरीर`, petals: `4 पंखुड़ियां`,
+        strain: `खाने और संभोग की वासना में अत्यधिक डूबना।`,
+        purush: `खाने और संभोग का कट्टर विरोध करना; दूसरों के पहनावे या युवाओं के प्रति तिरस्कार व क्रोध रखना।`,
+        satori: `विपरीत लिंग की व्यक्ति को ‘भोगने’ या ‘सुधारने/विरोध करने’ की दोनों लालसाओं को छोड़ना।`,
+        virtue: `ब्रह्मचर्य (ब्रह्म जैसी सहज चर्या—न अति भोग, न दमन)।`
+      },
+      {
+        num: `02`, name: `स्वाधिष्ठान चक्र`, age: `~14 वर्ष की आयु`, body: `भावात्मक शरीर`, petals: `6 पंखुड़ियां`,
+        strain: `भय, घृणा, क्रोध, चिंता और भावनाओं का अत्यधिक प्रदर्शन।`,
+        purush: `इन भावनाओं का विरोध करना, व्यर्थ की बहादुरी दिखाना और हिंसा पर उतर आना।`,
+        satori: `भविष्य की सुरक्षा, धन या बीमारी से जुड़े व्यर्थ के डर और चिंता को बिना कर्म किए देख कर छोड़ना।`,
+        virtue: `प्रेम, करुणा और मैत्री भाव का उदय।`
+      },
+      {
+        num: `03`, name: `मणिपुर चक्र`, age: `~21 वर्ष की आयु`, body: `सूक्ष्म शरीर`, petals: `10 पंखुड़ियां`,
+        strain: `मन में अत्यधिक तर्क, विचारों और संदेह के जाल में फंस जाना।`,
+        purush: `किसी भी बात पर व्यर्थ का अंधविश्वास और हठ दिखाना।`,
+        satori: `लॉजिकल माइंड (संदेह और अति-विश्लेषण) को छोड़कर शांत देखना।`,
+        virtue: `सजग जागरूकता और परम ऊर्जा पर सहज विश्वास।`
+      },
+      {
+        num: `04`, name: `अनाहत चक्र`, age: `~28 वर्ष की आयु`, body: `मानस शरीर`, petals: `12 पंखुड़ियां`,
+        strain: `कल्पना, दिवास्वप्न और सिद्धियों (टेलीपैथी, एस्ट्रल प्रोजेक्शन, दिव्य दृष्टि) में फंस जाना।`,
+        purush: `मित्र और अपने पराए के भ्रामक स्वप्न व भेद निर्मित करना।`,
+        satori: `कल्पना से मिलने वाले सुख, ध्यान के चमत्कार और सिद्धियों के आकर्षण को छोड़ देना। (यह हृदय-प्रेम नहीं, कल्पना का केंद्र है)।`,
+        virtue: `सत्य को यथावत देखने की निर्मल दृष्टि।`
+      },
+      {
+        num: `05`, name: `विशुद्ध चक्र`, age: `~35 वर्ष की आयु`, body: `आत्मिक शरीर`, petals: `16 पंखुड़ियां`,
+        strain: `गलत ‘मैं’ (अहं) के साथ देव योनि की अच्छी बातें पकड़ना और “मैं सबका भला कर दूंगा” के भ्रम में फंसना।`,
+        purush: `“मेरे बच्चों का भविष्य मुझे ही बनाना है”—इस कर्ता-अहंकार या दानव योनि के बुरे कर्मों में फंसना।`,
+        satori: `अपने झूठे अहं तथा “मैं स्त्री हूं या पुरुष हूं” की पहचान को पूरी तरह छोड़ देना।`,
+        virtue: `सही ‘मैं’ का बोध। इसे पार करते ही स्त्रैण चित्त साधक छठा-सातवां चक्र छोड़े बिना सीधे देवदूत मार्ग से मोक्ष पा सकते हैं।`
+      },
+      {
+        num: `06`, name: `आज्ञा चक्र`, age: `शरीर-मुक्त अवस्था`, body: `ब्रह्म शरीर`, petals: `2 पंखुड़ियां`,
+        strain: `देव लोक जैसी स्वर्गीय अवस्था में अटककर पृथ्वी पर लोगों से अच्छे कर्म करवाते रहना।`,
+        purush: `धर्म, देश या जाति के नाम पर बदले की भावना से (हिटलर/स्टालिन जैसे उदाहरण) विनाश करवाना और नर्क में जलना।`,
+        satori: `“मुझे सबका अच्छा करना है”—इस सूक्ष्म कर्ता-भावना का भी त्याग करना।`,
+        virtue: `बिना किसी को आज्ञा दिए साक्षी भाव में स्थित होना।`
+      },
+      {
+        num: `07`, name: `सहस्रार चक्र`, age: `न्यूनतम कंपन अवस्था`, body: `निर्वाण शरीर`, petals: `1000 पंखुड़ियां`,
+        strain: `महायुग के अंत में विश्व के विनाश को रोकने के व्यर्थ प्रयास में पीड़ा भोगना।`,
+        purush: `विनाश के विरुद्ध लड़ते हुए नकारात्मक आवेश में फंसे रहना।`,
+        satori: `संपूर्ण कंपन का शांत हो जाना और जो घटित हो रहा है उसे विनाश नहीं बल्कि परम ऊर्जा में लय समझना।`,
+        virtue: `पूर्ण अद्वैत, मोक्ष और परम ऊर्जा के साथ एकत्व।`
+      }
+    ];
+
+    const SPIRIT_TYPES = [
+      {
+        title: `पुरुष चित्त की पूरी प्रेतात्मा (भाग 15)`,
+        risk: `सबसे जल्दी पहचान में आने वाली (अपेक्षाकृत कम हानिकारक)`,
+        signs: `व्यक्ति का अचानक अलग आवाज में बोलना, बोलना बंद हो जाना, अत्यधिक क्रोध, सिर दर्द, रक्तचाप बढ़ना या बदला लेने का व्यवहार। तांत्रिक या काला जादू करने वाले ऐसी भटकती आत्माओं का उपयोग करते हैं।`,
+        remedy: `व्यक्ति से घृणा न करें। उससे सख्ती से बात कर कहें कि “तुम्हारा शरीर छूट गया है, यहां से जाओ”। साथ ही अपनी क्रोध/घृणा या संपत्ति विवाद की सोच बदलें और पूरे दिन परमात्मा से रक्षा मांगें।`
+      },
+      {
+        title: `स्त्रैण चित्त की पूरी प्रेतात्मा (भाग 16)`,
+        risk: `अति सूक्ष्म और भ्रामक (आग से खेलने जैसा)`,
+        signs: `यह प्रेम या सहायता करने के नाम पर शरीर में प्रवेश करती है—जैसे दिवंगत पति/पत्नी का परिवार की मदद के लिए आना, या साधक को ध्यान में ठंडी हवा, सिद्धि, लोगों के विचार जानना व समाधान बताने की शक्ति देना।`,
+        remedy: `किसी दिवंगत प्रियजन की मृत्यु पर “अब मेरा क्या होगा” कहकर सहायता न बुलाएं। सिद्धि मिलने पर भी उसे स्वीकार न करें। स्पष्ट कहें कि “मुझे तुम्हारी आवश्यकता नहीं है, परमात्मा मेरी सहायता करेंगे”।`
+      },
+      {
+        title: `चुड़ैल — अति-प्रोटेक्टिव ऊर्जा (भाग 17)`,
+        risk: `परिवार के भीतर मानसिक दबाव व भय`,
+        signs: `यह केवल स्त्रियों में नहीं, पुरुषों (माता, पिता, दादा, बहन आदि) में भी हो सकती है। यह “मेरा परिवार सुरक्षित रहे, कुछ बुरा न हो जाए” की अत्यधिक चिंता और नियंत्रणकारी देखभाल के रूप में प्रकट होती है।`,
+        remedy: `हर व्यक्ति अपनी मुक्त इच्छा (Free Will) लेकर जन्मा है। दूसरों को आवश्यकता से अधिक नियंत्रित करने की चिंता छोड़ें और स्वयं शांत रहकर अपने घर को ब्लू हीलिंग लाइट से भरें।`
+      },
+      {
+        title: `डायन — बॉसी व डराने वाली ऊर्जा (भाग 17)`,
+        risk: `परिवार व कार्यस्थल पर प्रभुत्व और कलह`,
+        signs: `स्त्री या पुरुष किसी में भी हो सकती है। “सब कुछ मेरे कहे अनुसार ही होना चाहिए” की जिद, दूसरों को डराकर रखना और अपनी बात न माने जाने पर क्रोध करना।`,
+        remedy: `आमने-सामने आने पर अहंकार (Ego) से उत्तर न दें। यदि आप स्वयं ऐसे बॉसी हैं, तो दूसरों की मुक्त इच्छा का सम्मान करें। ध्यान में इन ऊर्जाओं से क्षमा मांगकर घर की नकारात्मकता साफ करें।`
+      },
+      {
+        title: `सोल पार्ट्स (मृत और जीवित लोगों के विचार) (भाग 18–19)`,
+        risk: `सबसे व्यापक—लगभग हर जीवित मनुष्य इससे प्रभावित`,
+        signs: `किसी एक आदत या विचार का अंश (जैसे सिगरेट पीने, रिश्वत लेने या किसी के प्रति द्वेष का विचार) बिना पता चले हमारे भीतर पड़ा रहता है। जीवित लोगों की गालियां, ईर्ष्या या बुरे विचार भी कर्म-बंधन के रूप में चिपकते हैं।`,
+        remedy: `अच्छा बनने का निर्णय लेने पर जब कोई बड़ा संकट आए, तो समझें कि यह पुरानी विचार-परत (Pattern) का हमला है। अडिग रहें कि “भीख मांगनी पड़े तो भी गलत काम नहीं करूंगा”, और सक्रिय ध्यान व स्नान/जल शुद्धि से परत साफ करें।`
+      }
+    ];
+
+    const MED_STEPS = [
+      {
+        step: `चरण 01`, title: `ध्यान की 5 विधियों में से एक का चयन`,
+        desc: `साधना की शुरुआत अपनी प्रकृति के अनुसार पांच प्रकार की विधियों में से किसी एक को चुनने से होती है: (1) विश्राम/रिलैक्सेशन, (2) रेचन या सक्रिय ध्यान (ओशो), (3) त्राटक/एकाग्रता, (4) शरीर को पूरी तरह थकाने वाला ध्यान, और (5) साक्षीभाव या विपश्यना। ध्यान में यदि भगवान के दर्शन या कंपन हों, तो उसे भी माया समझकर छोड़ते जाना है।`
+      },
+      {
+        step: `चरण 02`, title: `योग निद्रा का घटित होना`,
+        desc: `विचारों और अनुभवों को छोड़ते-छोड़ते ऐसी अवस्था आती है जब आपका भौतिक शरीर पूरी तरह सो जाता है (खर्राटे भी आ सकते हैं), किंतु आपकी चेतना जाग्रत रहती है। आपको बाहर की आवाजें और घर की गतिविधियां सुनाई देती हैं। यहीं से पता चलता है कि आप शरीर से अलग हैं।`
+      },
+      {
+        step: `चरण 03`, title: `ध्यान लगना (विचार-शून्यता की अनुभूति)`,
+        desc: `जब आप बाहरी आवाजों या एस्ट्रल प्रोजेक्शन में भटके बिना आगे बढ़ते हैं, तो कुछ क्षणों के लिए विचार पूरी तरह रुक जाते हैं। मन में केवल एक ही बोध शेष रहता है कि “कोई विचार नहीं आ रहा”। इससे निकलने पर गहरी नींद से भी अधिक ताजगी और सुकून मिलता है।`
+      },
+      {
+        step: `चरण 04`, title: `सबीज / सविकल्प समाधि`,
+        desc: `कई बार ध्यान लगने के बाद ऐसी गहराई आती है जब “कोई विचार नहीं है” यह विचार भी समाप्त हो जाता है। यदि आप इस अवस्था में प्रवेश से पहले कोई एक प्रश्न या विचार (बीज) मन में रखते हैं—जैसे ब्रह्मांड या पूर्व स्मृति को जानना—तो समाधि में उसका उत्तर मिल जाता है। यही सबीज समाधि है, जो बार-बार छूट जाती है।`
+      },
+      {
+        step: `चरण 05 – 11`, title: `सात सतोरी (सात चक्रों की सात परीक्षाएं)`,
+        desc: `ज़ेन बौद्ध परंपरा में ‘सतोरी’ का अर्थ है परीक्षा का प्रमाणपत्र (सर्टिफिकेट)। साधक को जीवन और ध्यान में सात चक्रों की कसौटियों को पार करना पड़ता है: मूलाधार (वासना व विरोध त्याग), स्वाधिष्ठान (भय त्याग), मणिपुर (तर्क/संदेह त्याग), अनाहत (कल्पना सुख व सिद्धि त्याग), विशुद्ध (गलत अहं व लिंग-भेद त्याग), आज्ञा (अच्छा करने का कर्ताभाव त्याग) और सहस्रार।`
+      },
+      {
+        step: `चरण 12`, title: `शून्य का प्रत्यक्ष दर्शन`,
+        desc: `जब सातवीं सतोरी तक सभी भावनाएं और इच्छाएं शांत हो जाती हैं, तो भावनाओं का ‘शून्य’ प्रकट होता है। न जीने की इच्छा बचती है, न मरने की और न ही कुछ अच्छा या बुरा करने की। इस स्थिति को शब्दों में नहीं बांधा जा सकता—यहां न दुख होता है न उत्तेजना, केवल परम आनंद शेष रहता है।`
+      },
+      {
+        step: `चरण 13`, title: `निर्बीज / निर्विकल्प समाधि`,
+        desc: `जब साधक सभी विचारों के साथ-साथ “अच्छा करने की भावना” (बीज) को भी पूरी तरह त्याग देता है, तब बिना किसी लक्ष्य या विचार के जो समाधि लगती है वह निर्बीज समाधि कहलाती है। इसमें आत्मा संपूर्ण अस्तित्व के साथ एक होती हुई प्रतीत होती है—“मैं ही पेड़ में, मैं ही सर्वत्र हूं”।`
+      },
+      {
+        step: `चरण 14`, title: `संबोधि, एन्लाइटनमेंट, मोक्ष या निर्वाण`,
+        desc: `शून्य और निर्बीज समाधि को समझ से पार कर जब साधक को केवल जानकारी के रूप में नहीं बल्कि प्रत्यक्ष अनुभव से यह बोध हो जाता है कि “संपूर्ण संसार माया है और सब विचारों से मुक्ति ही सहज स्वभाव है”, तब वह संबोधि (हिंदू धर्म में मोक्ष, जैन में कैवल्य, बौद्ध में निर्वाण) को प्राप्त होता है। इसमें लगभग 12–15 वर्ष लग सकते हैं।`
+      },
+      {
+        step: `चरण 15`, title: `महापरिनिर्वाण`,
+        desc: `मोक्ष प्राप्त साधक जब अपनी देह (भौतिक शरीर) का त्याग करता है, तो उसकी ऊर्जा पुनः जन्म-मरण या जीवात्मा जगत में न जाकर सदा के लिए परम ऊर्जा (डार्क एनर्जी) में एकरूप होकर विलीन हो जाती है। यही साधना की अंतिम परिणति है।`
+      }
+    ];
+
+    const BARDO_STAGES = [
+      {
+        who: `दूसरे व्यक्ति (माँ) द्वारा की जाने वाली विधि`,
+        title: `1. जब बच्चा माँ के गर्भ में हो`,
+        desc: `गर्भ में बच्चे का शरीर विकसित होने के बाद जब ऊर्जा उससे जुड़ती है, तब माँ को स्वयं यह समझना चाहिए कि जीवन ऊर्जा और जीवन के अनुभव अलग-अलग हैं। गर्भवती माँ को क्रोध, लालच और डर छोड़कर बच्चे को यह सकारात्मक भाव देना चाहिए कि वह प्रकृति के अनुरूप ऊर्जा स्वरूप को जानने के लिए आ रहा है।`
+      },
+      {
+        who: `साधक द्वारा स्वयं जीवन भर की जाने वाली विधि`,
+        title: `2. जब ऊर्जा स्वप्न (इच्छाओं) की स्थिति में हो`,
+        desc: `संसार का जीवन हमारी दबी हुई वासनाओं और इच्छाओं का स्वप्न है। “मेरा पैसा, मेरा घर, मेरी प्रॉपर्टी”—इन मान्यताओं को समझकर जीवन भर स्वयं को याद दिलाते रहना चाहिए कि मृत्यु के समय यह सब यहीं छूट जाएगा और ये अनुभव मेरा वास्तविक स्वरूप नहीं हैं।`
+      },
+      {
+        who: `साधक द्वारा स्वयं ध्यान में की जाने वाली विधि`,
+        title: `3. जब ऊर्जा ध्यान से आनंद स्थिति में हो`,
+        desc: `ध्यान साधना में मिलने वाली गहरी शांति, अलौकिक अनुभव या सिद्धियां भी माया का ही एक सूक्ष्म जाल हैं। यदि हम इनमें अटक गए तो देव लोक में जन्मों तक फंसे रह सकते हैं। अतः ध्यान के आनंद को भी यह मानकर पार करना चाहिए कि मेरा वास्तविक स्वरूप शुद्ध ऊर्जा है।`
+      },
+      {
+        who: `परिजनों द्वारा की जाने वाली विधि`,
+        title: `4. आखिरी मृत्यु की स्थिति में`,
+        desc: `जिन्होंने जीवन भर ध्यान नहीं किया, उनके अंतिम समय में परिजन कान के पास धीरे से कह सकते हैं: “अब शरीर छोड़कर परमात्मा में एक होने का समय आ गया है। इस मरते हुए शरीर पर ध्यान न दें, इससे आपको नया स्वस्थ स्वरूप मिलेगा। परम ऊर्जा के स्वर्णिम या नीले प्रकाश पर ध्यान लगाएं।”`
+      },
+      {
+        who: `परिजनों द्वारा की जाने वाली विधि`,
+        title: `5. मृत्यु होने के तुरंत बाद की स्थिति में`,
+        desc: `मृत्यु के कुछ समय बाद तक ऊर्जा आसपास रहती है और परिजनों के मन के विचार सुन सकती है। अतः प्रॉपर्टी के बंटवारे की चिंता छोड़कर प्रेम दिखाएं और उसे समझाएं: “आपका शरीर छूट गया है, रोने वालों के मोह को छोड़ें और आसपास दिख रहे सुनहरे या नीले परमात्मा के प्रकाश के साथ एक हो जाएं।”`
+      },
+      {
+        who: `उच्च समझदार आत्माओं द्वारा की जाने वाली विधि`,
+        title: `6. दूसरा जन्म लेने के लिए नए गर्भ की तलाश में`,
+        desc: `जीवात्मा जगत में उच्च स्तर पर स्थित समझदार आत्माएं ऊर्जा को नया जन्म चुनने में सहायता करती हैं ताकि वह पुराने अनुभवों के आकर्षण को छोड़कर ऐसा शरीर पसंद कर सके जहां वह अपने परम ऊर्जा स्वरूप को पहचान सके।`
+      }
+    ];
+
+    const SADHANA_MODES = [
+      {
+        title: `प्रोटेक्शन विधि 1 — परमात्मा की ऊर्जा का सुरक्षा कवच`,
+        durationSec: 180,
+        steps: [
+          `आरामदायक स्थिति में बैठें, आंखें बंद करें और मन में दोहराएं: “हे मेरे परमेश्वर, मेरे गुरु व सहायक आत्माओं, मेरे चारों ओर सकारात्मक ऊर्जा का मजबूत प्रोटेक्टिव घेरा बना दें।”`,
+          `3 से 1 और 10 से 1 की उल्टी गिनती के साथ मन के गहरे कोशिकीय स्तर पर जाएं।`,
+          `अनुभव करें कि कपाल (माथे) से परम ऊर्जा की ‘ब्लू हीलिंग लाइट’ प्रवेश कर प्रत्येक अंग और कोशिका को स्वस्थ कर रही है।`,
+          `संकल्प करें कि इस घेरे में केवल लाभकारी विचार ही आएं। बाहर आने के लिए 5 से 1 की गिनती करें।`
+        ],
+        affirmation: `मेरे चारों ओर परम ऊर्जा का सकारात्मक सुरक्षा घेरा है। मेरा शरीर, मन और यह स्थान पूर्णतः सुरक्षित व स्वस्थ है।`
+      },
+      {
+        title: `ब्लू हीलिंग लाइट — नाभि शुद्धि, गृह रक्षा व क्षमा ध्यान`,
+        durationSec: 240,
+        steps: [
+          `सीधे लेटकर चादर ओढ़ लें। तीन से एक की गिनती के साथ सांस छोड़ने पर ध्यान दें और लॉजिकल माइंड को शांत होने को कहें।`,
+          `नाभि से नीले प्रकाश (Blue Healing Light) को शरीर में प्रवेश कराएं और जन्मों की नकारात्मक कंपनियों को बाहर निकलते देखें।`,
+          `मन से घर के सभी कमरों में घूमकर प्रकाश फैलाएं, फिर बाहर आकर चारों ओर नीली दीवार बनाएं और 4 कोनों पर 4 देवदूत (रक्षक ऊर्जा) स्थापित करें।`,
+          `अंत में जिस व्यक्ति से समस्या हो उसे सामने देखें, नाभि से उस तक नीला प्रकाश भेजें और मन से क्षमा मांगें व माफ करें।`
+        ],
+        affirmation: `परम ऊर्जा की ब्लू हीलिंग लाइट मेरी नाभि से प्रवाहित होकर मेरे पूरे शरीर, घर के चारों कोनों और संबंधों को पवित्र कर रही है।`
+      },
+      {
+        title: `प्रोटेक्शन विधि 5 — रात्रि कृतज्ञता व विश्राम ध्यान`,
+        durationSec: 180,
+        steps: [
+          `बिस्तर पर आराम से लेट जाएं, 3 गहरी सांस बाहर निकालें और 3 से 1 की गिनती कर मन के गहरे स्तर पर आ जाएं।`,
+          `दिनभर मिली अच्छी बातों और सुरक्षा के लिए परमेश्वर का आभार व्यक्त करें: “आप रोजाना मेरा जीवन बेहतर कर रहे हैं।”`,
+          `दिनभर अनजाने में हुई किसी भी भूल के लिए क्षमा मांगें और चारों ओर सुरक्षा घेरे को पुनः सक्रिय करें।`,
+          `10 से 1 की उल्टी गिनती करते हुए इस विश्वास के साथ गहरी नींद में उतरें कि “मेरा जीवन अब शांत, आनंदित और स्वस्थ हो रहा है।”`
+        ],
+        affirmation: `हे परम ऊर्जा, दिनभर की रक्षा के लिए आपका कोटि-कोटि आभार। मैं पूर्ण सुरक्षित और आनंदित होकर विश्राम कर रहा हूं।`
+      }
+    ];
+
+    const DIRECTORY_ITEMS = [
+      { id: `भाग 01`, cluster: `cosmos`, title: `मेरे अलौकिक अनुभव से आपको मार्ग मिल सकता है`, summary: `लेखक अजय से ‘आनंद स्वरूप’ बनने तक की 1971–2009 की जीवन यात्रा, जादू-टोना अनुभव, वर्ष 2000 की असत्य भविष्यवाणी व ओशो संन्यास।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 02`, cluster: `cosmos`, title: `2011 के आगे का अनुभव और आर्थिक संकट में पूर्ण श्रद्धा`, summary: `भाग 1 व 11 में संदर्भित: कंप्यूटर क्लास बंद होने और नकली सर्टिफिकेट के प्रलोभन को ठुकराकर परम ऊर्जा पर श्रद्धा रखने से मिली दृष्टि।`, status: `संदर्भित भाग` },
+      { id: `भाग 03`, cluster: `cosmos`, title: `शास्त्रों की गलत व्याख्या और मान्यताओं का त्याग`, summary: `भाग 9, 10 व 12 में संदर्भित: कैसे लोग ग्रंथों के वास्तविक अर्थ के बजाय गुरुओं/बिचोलियों की मान्यताओं में उलझ जाते हैं।`, status: `संदर्भित भाग` },
+      { id: `भाग 04`, cluster: `cosmos`, title: `डार्क एनर्जी, डार्क मैटर और परमात्मा`, summary: `70% डार्क एनर्जी, 25% डार्क मैटर और 5% पदार्थ (हिग्स बोसोन) का ब्रह्मांडीय व शारीरिक मॉडल।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 05`, cluster: `cosmos`, title: `बिग बैंग और विश्व का बनना और बिखरना`, summary: `स्थिर अद्वैत ऊर्जा से कंपन द्वारा द्वैत (स्त्रैण व पुरुष चित्त) और महाविस्फोट से सृष्टि के बनने की प्रक्रिया।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 06`, cluster: `cosmos`, title: `विश्व और हमारे विकास में परमात्मा`, summary: `बिजली व बैटरी के उदाहरण से ऊर्जा का रूपांतरण; सृष्टि में अनुभवों का संग्रह और कृष्ण व बुद्ध चेतना का विकास।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 07`, cluster: `cosmos`, title: `आत्मा, जीव, अवचेतन मन, देव, दानव, असुर क्या है?`, summary: `पशु-मानव विकास में शरीर का बोध और ऊर्जा का स्वयं को परम ऊर्जा से अलग मानकर ‘आत्मा’ और ‘जीव’ बनना।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 08`, cluster: `cosmos`, title: `जीव लोक और विश्व माया या मिथ्या कैसे है?`, summary: `माया के स्वरूप, पौराणिक रहस्यमय जीवों और जीवात्मा जगत के प्रभाव की भूमिका।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 09`, cluster: `chakras`, title: `जीव लोक की असर से कैसे बचें?`, summary: `देव व दानव दोनों की विचारधाराओं का त्याग, 14 भागों का परिचय, महाभारत के पात्र व कुंडली में पशु योनि का अर्थ।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 10`, cluster: `chakras`, title: `जीव लोक और शरीर के सात चक्र`, summary: `7-7 वर्षों में चक्रों का जागृत होना, कुंडलिनी व आज्ञा चक्र की भ्रांतियों का खंडन, और विचारों को देख कर पार करने के 3 नियम।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 11`, cluster: `chakras`, title: `हम शरीर कैसे पसंद करते हैं?`, summary: `लड़का A-B-C और गियर फ्रीक्वेंसी उदाहरण; मृत्यु के बाद यमराज-समान मार्गदर्शन व जन्म से 9 माह पहले यादों का भ्रूण के बाहर रहना।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 12`, cluster: `chakras`, title: `जीव आत्मा को नियंत्रित करने की रीत`, summary: `अंबा-शिखंडी व गरुड़ पुराण (यमराज-चित्रगुप्त) प्रमाण; और किसी आत्मा पर निर्भर रहने के बजाय स्व-सुरक्षा के उपाय।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 13`, cluster: `chakras`, title: `ज्योतिष, न्यूमैरोलॉजी, टैरो, वास्तु ये सब क्या है?`, summary: `0 (शून्य) से 9 (पूर्णता) तक अंक शास्त्र की यात्रा, 3-6-9 के पड़ाव और प्रकाश के 7 रंगों व चक्रों का संबंध।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 14`, cluster: `spirits`, title: `भूत, प्रेत, डायन, चुड़ैल, देवदूत ये सब क्या है?`, summary: `भ्रमित परमात्मा की 3 अवस्थाएं, 5 प्रकार की बाधाएं और हर 10–12 मनुष्यों के बीच देवदूत (5वां चक्र पार) आत्माओं की उपस्थिति।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 15`, cluster: `spirits`, title: `पुरुष चित्त वाली प्रेत आत्मा से कैसे बचें?`, summary: `बिजली वोल्टेज मॉडल, भटकती आत्मा व काला जादू से बचाव, नारायण बलि बनाम सोच की फ्रीक्वेंसी बदलने का महत्व।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 16`, cluster: `spirits`, title: `स्त्रैण चित्त वाली प्रेत आत्मा से कैसे बचें?`, summary: `प्रेम, सहानुभूति या सिद्धियों के लोभ से आने वाली स्त्रैण प्रेतात्माओं के खतरे और उनसे स्पष्ट शब्दों में मुक्ति पाने की विधि।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 17`, cluster: `spirits`, title: `चुड़ैल, डायन से कैसे बचें?`, summary: `16-सदस्यीय परिवार उदाहरण: अति-प्रोटेक्टिव (चुड़ैल) और बॉसी (डायन) स्वभाव महिला व पुरुष दोनों में, तथा अहंकार रहित शांति का उपाय।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 18`, cluster: `spirits`, title: `प्रेत आत्मा के विचार (Soul Part) से कैसे बचें?`, summary: `विचारों की गुलामी से मुक्ति; कैसे अतीत के मृत और जीवित लोगों के अनुभव-अंश हमारे मन को प्रभावित करते हैं।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 19`, cluster: `spirits`, title: `जिंदा इंसान के Soul Part और कर्म बंधन`, summary: `बुरे विचारों की परत (Layer) से बाहर निकलने पर आने वाले प्रलोभन, तथा स्नान, जल और सुरक्षा गोले से ऊर्जा शुद्धि।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 20`, cluster: `moksha`, title: `विश्व के तीन बड़े नियम क्या हैं?`, summary: `परमात्मा ऊर्जा है और हम अपने स्वयं के परमात्मा हैं—आकर्षण, स्वीकार और सचेत सृजन के नियमों का व्यावहारिक सत्य।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 21`, cluster: `moksha`, title: `ध्यान, समाधि, योग निद्रा, सतोरी क्या है?`, summary: `ध्यान से महापरिनिर्वाण तक 15 चरणों की रूपरेखा, 5 ध्यान विधियां, योग निद्रा, ध्यान लगना व सविकल्प समाधि।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 22`, cluster: `moksha`, title: `सात सतोरी, निर्बीज समाधि, और शून्य को देखना क्या है?`, summary: `प्रत्येक चक्र की सतोरी कसौटी, ‘अच्छा करने की भावना’ को छोड़कर निर्बीज समाधि और भावनात्मक शून्य का अनुभव।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 23`, cluster: `moksha`, title: `संबोधि, Enlightenment, मोक्ष, निर्वाण, महापरिनिर्वाण क्या है?`, summary: `ज़ेन के 10 बैल, 7 सृष्टियां (0.01% मुक्ति), मोक्ष संबंधी 7 भ्रांतियों का निवारण और माया से पूर्ण मुक्ति।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 24–25`, cluster: `moksha`, title: `सद्गुरु की पहचान एवं संबोधि उपरांत जीवन`, summary: `भाग 23 में उल्लिखित आगामी विषय: सच्चे गुरु या मार्गदर्शक की पहचान कैसे करें और बोध के बाद का सहज जीवन।`, status: `संदर्भित भाग` },
+      { id: `भाग 26`, cluster: `living`, title: `आनंदमय जीवन जीने के लिए हमें क्या करना चाहिए?`, summary: `शरीर (न्यू डाइट सिस्टम), मन (चक्र विचारों का त्याग) और आत्मा (परमात्मा बोध) के तीन स्तरों पर समग्र स्वास्थ्य।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 27`, cluster: `living`, title: `आनंदमय जीवन का व्यावहारिक अभ्यास`, summary: `भाग 26 व 28 के मध्य का अभ्यास-क्रम: दैनंदिन जीवन में ऊर्जा संतुलन और प्रेम का विस्तार।`, status: `संदर्भित भाग` },
+      { id: `भाग 28`, cluster: `living`, title: `प्रसन्नतापूर्वक मृत्यु के लिए बारदो थोडल और अनायासेन मरणं प्रार्थना`, summary: `महामारी व मृत्यु का भय मिटाना, बारदो थोडल के 6 समय, अनायासेन मरणं की 4 पंक्तियां व विज्ञान भैरव तंत्र चिता ध्यान।`, status: `स्रोत उपलब्ध` },
+      { id: `भाग 29–30`, cluster: `living`, title: `श्रृंखला संकलन, अंतिम प्रार्थना और समर्पण`, summary: `संपूर्ण 30-भागीय आध्यात्मिक ज्ञान कोष का समापन, जीवन-मृत्यु के प्रति समभाव और परम ऊर्जा को समर्पण।`, status: `संदर्भित भाग` },
+      { id: `साधना 01`, cluster: `living`, title: `ब्लू हीलिंग लाइट गाइडेड मेडिटेशन`, summary: `जीवात्मा जगत से सकारात्मक संपर्क, नाभि से शरीर शुद्धि, घर के 4 कोनों पर देवदूत रक्षा और क्षमा याचना।`, status: `ध्यान विधि` },
+      { id: `साधना 02`, cluster: `living`, title: `प्रोटेक्शन विधि 1 — सुरक्षा कवच ध्यान`, summary: `3-से-1 व 10-से-1 गिनती, कपाल से ब्लू लाइट का कोशिकीय प्रवेश व सकारात्मक ऊर्जा के सुरक्षा घेरे का निर्माण।`, status: `ध्यान विधि` },
+      { id: `साधना 03`, cluster: `living`, title: `प्रोटेक्शन विधि 5 — रात्रि ध्यान`, summary: `सोने से पूर्व दिनभर की रक्षा के लिए आभार, अनजानी भूलों की क्षमा और शांत निद्रा में प्रवेश।`, status: `ध्यान विधि` }
+    ];
+
+    // Tab / Selector Helper
+    function updateTabSelection(clickedBtn) {
+      if (!clickedBtn || !clickedBtn.parentElement) return;
+      const siblings = clickedBtn.parentElement.querySelectorAll('[role="tab"]');
+      siblings.forEach(function (el) {
+        el.setAttribute('aria-selected', 'false');
+        el.classList.remove('btn-active');
+      });
+      clickedBtn.setAttribute('aria-selected', 'true');
+      if (clickedBtn.classList.contains('btn')) {
+        clickedBtn.classList.add('btn-active');
+      }
+    }
+
+    // Navigation Jump
+    function jumpToSection(id) {
+      const target = document.getElementById(id);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    // Section 1: Journey Selector
+    function selectJourneyStep(idx, btn) {
+      if (btn) updateTabSelection(btn);
+      const item = JOURNEY_STEPS[idx];
+      const box = document.getElementById('journey-detail');
+      if (!item || !box) return;
+      box.innerHTML = `
+        <div style="display:grid;gap:var(--space-sm);">
+          <span class="badge badge-brass" style="width:fit-content;">${item.era}</span>
+          <h3 style="margin:0;font-family:var(--font-headline);font-weight:500;font-size:1.375rem;">${item.title}</h3>
+          <p class="prose" style="color:var(--on-surface-variant);">${item.body}</p>
+        </div>
+      `;
+    }
+
+    // Section 2: Vibration Toggle
+    function setVibrationState(mode) {
+      const data = VIBRATION_STATES[mode];
+      const well = document.getElementById('vibration-well');
+      const btnAdv = document.getElementById('btn-advaita');
+      const btnDva = document.getElementById('btn-dvaita');
+      if (!data || !well) return;
+      if (btnAdv) btnAdv.classList.toggle('btn-active', mode === 'advaita');
+      if (btnDva) btnDva.classList.toggle('btn-active', mode === 'dvaita');
+      well.innerHTML = `
+        <span style="font-weight:600;color:${data.color};">${data.badge}</span>
+        <p class="prose-muted" style="font-size:0.95rem;">${data.desc}</p>
+      `;
+    }
+
+    // Section 3: Rebirth Stage Selector
+    function selectRebirthStage(idx, btn) {
+      if (btn) updateTabSelection(btn);
+      const item = REBIRTH_STAGES[idx];
+      const box = document.getElementById('rebirth-detail');
+      if (!item || !box) return;
+      box.innerHTML = `
+        <h3 style="margin:0 0 var(--space-xs);font-family:var(--font-headline);font-weight:500;font-size:1.15rem;color:var(--primary);">${item.title}</h3>
+        <p class="prose-muted" style="font-size:0.95rem;">${item.body}</p>
+      `;
+    }
+
+    // Section 4: Chakra Selector
+    function selectChakra(idx, btn) {
+      if (btn) updateTabSelection(btn);
+      const c = CHAKRAS[idx];
+      const box = document.getElementById('chakra-detail');
+      if (!c || !box) return;
+      box.innerHTML = `
+        <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:var(--space-sm);border-bottom:var(--hairline);padding-bottom:var(--space-sm);">
+          <div>
+            <span class="coord-label">चक्र ${c.num} · ${c.age}</span>
+            <h3 style="margin:4px 0 0;font-family:var(--font-headline);font-weight:500;font-size:1.5rem;">${c.name}</h3>
+          </div>
+          <div style="display:flex;flex-wrap:wrap;gap:var(--space-xs);">
+            <span class="badge badge-sky">${c.body}</span>
+            <span class="badge badge-brass">${c.petals}</span>
+          </div>
+        </div>
+        <div class="polarity-grid">
+          <div class="observation-well">
+            <span class="badge badge-sky" style="margin-bottom:var(--space-xs);">स्त्रैण चित्त (इड़ा / भोग व प्रदर्शन)</span>
+            <p class="prose-muted" style="font-size:0.9375rem;">${c.strain}</p>
+          </div>
+          <div class="observation-well">
+            <span class="badge badge-coral" style="margin-bottom:var(--space-xs);">पुरुष चित्त (पिंगला / विरोध व हठ)</span>
+            <p class="prose-muted" style="font-size:0.9375rem;">${c.purush}</p>
+          </div>
+        </div>
+        <div class="polarity-grid">
+          <div class="panel-low" style="padding:var(--space-md);">
+            <strong style="color:var(--primary);display:block;margin-bottom:4px;">सतोरी कसौटी (क्या छोड़ना है?)</strong>
+            <p class="prose-muted" style="font-size:0.9375rem;">${c.satori}</p>
+          </div>
+          <div class="panel-low" style="padding:var(--space-md);">
+            <strong style="color:var(--data-3);display:block;margin-bottom:4px;">पार करने पर प्राप्त गुण (सुषुम्ना संतुलन)</strong>
+            <p class="prose-muted" style="font-size:0.9375rem;">${c.virtue}</p>
+          </div>
+        </div>
+      `;
+    }
+
+    // Section 5: Spirit Type Selector
+    function selectSpiritType(idx, btn) {
+      if (btn) updateTabSelection(btn);
+      const s = SPIRIT_TYPES[idx];
+      const box = document.getElementById('spirit-detail');
+      if (!s || !box) return;
+      box.innerHTML = `
+        <div style="display:grid;gap:var(--space-md);">
+          <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:var(--space-sm);">
+            <h3 style="margin:0;font-family:var(--font-headline);font-weight:500;font-size:1.35rem;">${s.title}</h3>
+            <span class="badge badge-coral">${s.risk}</span>
+          </div>
+          <div class="observation-well">
+            <strong style="color:var(--tertiary);display:block;margin-bottom:4px;">पहचान और लक्षण</strong>
+            <p class="prose-muted" style="font-size:0.95rem;">${s.signs}</p>
+          </div>
+          <div class="observation-well">
+            <strong style="color:var(--data-3);display:block;margin-bottom:4px;">सुरक्षा और निवारण</strong>
+            <p class="prose-muted" style="font-size:0.95rem;">${s.remedy}</p>
+          </div>
+        </div>
+      `;
+    }
+
+    // Section 6: 15 Meditation Steps Selector
+    function selectMedStep(idx, btn) {
+      if (btn) updateTabSelection(btn);
+      const m = MED_STEPS[idx];
+      const box = document.getElementById('med-step-detail');
+      if (!m || !box) return;
+      box.innerHTML = `
+        <div style="display:grid;gap:var(--space-xs);">
+          <span class="coord-label">${m.step}</span>
+          <h3 style="margin:0;font-family:var(--font-headline);font-weight:500;font-size:1.4rem;">${m.title}</h3>
+          <p class="prose" style="color:var(--on-surface-variant);">${m.desc}</p>
+        </div>
+      `;
+    }
+
+    // Section 7: Bardo Stage Selector
+    function selectBardoStage(idx, btn) {
+      if (btn) updateTabSelection(btn);
+      const b = BARDO_STAGES[idx];
+      const box = document.getElementById('bardo-detail');
+      if (!b || !box) return;
+      box.innerHTML = `
+        <span class="badge badge-sky" style="margin-bottom:var(--space-xs);">${b.who}</span>
+        <h3 style="margin:0 0 var(--space-xs);font-family:var(--font-headline);font-weight:500;font-size:1.15rem;color:var(--primary);">${b.title}</h3>
+        <p class="prose-muted" style="font-size:0.95rem;">${b.desc}</p>
+      `;
+    }
+
+    // Section 8: Guided Sadhana & Timer Studio
+    let activeSadhanaIdx = 0;
+    let timerSecondsLeft = SADHANA_MODES[0].durationSec;
+    let timerIntervalId = null;
+    let isTimerRunning = false;
+
+    function formatTime(sec) {
+      const m = Math.floor(sec / 60);
+      const s = sec % 60;
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function renderSadhanaScript() {
+      const mode = SADHANA_MODES[activeSadhanaIdx];
+      const panel = document.getElementById('sadhana-script-panel');
+      if (!mode || !panel) return;
+      const listHtml = mode.steps.map(function (st, i) {
+        return `<li style="margin-bottom:var(--space-xs);">${st}</li>`;
+      }).join('');
+      panel.innerHTML = `
+        <div class="coord-label">चयनित अभ्यास निर्देश</div>
+        <h3 style="margin:0;font-family:var(--font-headline);font-weight:500;font-size:1.35rem;color:var(--on-surface);">${mode.title}</h3>
+        <ol style="margin:0;padding-left:1.25rem;color:var(--on-surface-variant);line-height:1.68;">
+          ${listHtml}
+        </ol>
+        <div class="callout-brass">
+          <strong>मानसिक संकल्प:</strong> “${mode.affirmation}”
+        </div>
+      `;
+    }
+
+    function selectSadhanaMode(idx) {
+      activeSadhanaIdx = idx;
+      for (let i = 0; i < SADHANA_MODES.length; i++) {
+        const b = document.getElementById(`sad-btn-${i}`);
+        if (b) {
+          const isSel = i === idx;
+          b.setAttribute('aria-selected', isSel ? 'true' : 'false');
+          b.classList.toggle('btn-active', isSel);
+        }
+      }
+      resetMeditationTimer();
+      renderSadhanaScript();
+    }
+
+    function updateTimerUI() {
+      const mode = SADHANA_MODES[activeSadhanaIdx];
+      const readout = document.getElementById('timer-readout');
+      const phaseEl = document.getElementById('timer-phase-label');
+      const cueEl = document.getElementById('breath-cue');
+      const affEl = document.getElementById('live-affirmation');
+      const ring = document.getElementById('halo-ring');
+      if (!mode || !readout || !phaseEl || !cueEl || !affEl || !ring) return;
+
+      readout.textContent = formatTime(timerSecondsLeft);
+      const elapsed = mode.durationSec - timerSecondsLeft;
+
+      if (!isTimerRunning && timerSecondsLeft === mode.durationSec) {
+        phaseEl.textContent = `अभ्यास प्रारंभ करने के लिए तैयार`;
+        cueEl.textContent = `सामान्य श्वास`;
+        affEl.textContent = `आरामदायक आसन में बैठें या लेटें। आंखें बंद कर गहरी सांस लें और धीरे-धीरे बाहर छोड़ें।`;
+        ring.classList.remove('breathing-in');
+        return;
+      }
+
+      if (timerSecondsLeft <= 0) {
+        phaseEl.textContent = `अभ्यास पूर्ण — 5 से 1 की गिनती से बाहर आएं`;
+        cueEl.textContent = `शांति · शांति · शांति`;
+        affEl.textContent = `धीरे-धीरे अपनी आंखें खोलें और पूर्ण सुरक्षित व स्वस्थ अनुभव करें।`;
+        ring.classList.remove('breathing-in');
+        return;
+      }
+
+      const cycle = elapsed % 8;
+      if (cycle < 4) {
+        ring.classList.add('breathing-in');
+        cueEl.textContent = `नीला प्रकाश भीतर लें`;
+      } else {
+        ring.classList.remove('breathing-in');
+        cueEl.textContent = `नकारात्मकता बाहर छोड़ें`;
+      }
+
+      if (elapsed < 15) {
+        const count = 3 - Math.floor(elapsed / 5);
+        phaseEl.textContent = `प्रवेश गिनती: ${count > 0 ? count : 1} (गहरे स्तर पर प्रवेश)`;
+        affEl.textContent = `परम ऊर्जा से प्रार्थना करें: मेरे शरीर के चारों ओर सकारात्मक ऊर्जा का मजबूत सुरक्षा घेरा बना दें।`;
+      } else if (timerSecondsLeft <= 20) {
+        const outCount = Math.ceil(timerSecondsLeft / 4);
+        phaseEl.textContent = `बाहर आने की गिनती: ${outCount}`;
+        affEl.textContent = `5, 4, 3, 2, 1 — धीरे-धीरे जागृत स्तर पर वापस आएं और शांति महसूस करें।`;
+      } else {
+        const deepStep = 10 - (Math.floor((elapsed - 15) / 12) % 10);
+        phaseEl.textContent = `गहन कोशिकीय स्तर · गिनती ${deepStep}`;
+        affEl.textContent = mode.affirmation;
+      }
+    }
+
+    function toggleMeditationTimer() {
+      const btn = document.getElementById('timer-toggle-btn');
+      if (isTimerRunning) {
+        clearInterval(timerIntervalId);
+        timerIntervalId = null;
+        isTimerRunning = false;
+        if (btn) btn.textContent = `पुनः प्रारंभ करें`;
+        return;
+      }
+      if (timerSecondsLeft <= 0) {
+        timerSecondsLeft = SADHANA_MODES[activeSadhanaIdx].durationSec;
+      }
+      isTimerRunning = true;
+      if (btn) btn.textContent = `रोकें (Pause)`;
+      updateTimerUI();
+      timerIntervalId = setInterval(function () {
+        if (timerSecondsLeft > 0) {
+          timerSecondsLeft -= 1;
+          updateTimerUI();
+        } else {
+          clearInterval(timerIntervalId);
+          timerIntervalId = null;
+          isTimerRunning = false;
+          if (btn) btn.textContent = `पुनः अभ्यास करें`;
+          updateTimerUI();
+        }
+      }, 1000);
+    }
+
+    function resetMeditationTimer() {
+      clearInterval(timerIntervalId);
+      timerIntervalId = null;
+      isTimerRunning = false;
+      timerSecondsLeft = SADHANA_MODES[activeSadhanaIdx].durationSec;
+      const btn = document.getElementById('timer-toggle-btn');
+      if (btn) btn.textContent = `ध्यान प्रारंभ करें`;
+      updateTimerUI();
+    }
+
+    // Section 9: 30-Part Directory Filter
+    function filterDirectory() {
+      const searchEl = document.getElementById('dir-search');
+      const clusterEl = document.getElementById('dir-cluster');
+      const gridEl = document.getElementById('directory-grid');
+      const countEl = document.getElementById('directory-count');
+      if (!searchEl || !clusterEl || !gridEl || !countEl) return;
+
+      const query = searchEl.value.trim().toLowerCase();
+      const cluster = clusterEl.value;
+
+      const filtered = DIRECTORY_ITEMS.filter(function (item) {
+        const matchCluster = cluster === 'all' || item.cluster === cluster;
+        const text = `${item.id} ${item.title} ${item.summary}`.toLowerCase();
+        const matchQuery = !query || text.includes(query);
+        return matchCluster && matchQuery;
+      });
+
+      countEl.textContent = `${filtered.length} प्रविष्टियां प्रदर्शित (कुल ${DIRECTORY_ITEMS.length} में से)`;
+
+      if (filtered.length === 0) {
+        gridEl.innerHTML = `
+          <div class="panel" style="grid-column:1 / -1;text-align:center;padding:var(--space-xl);">
+            <p class="prose-muted" style="margin:0 auto var(--space-md);">आपकी खोज के अनुरूप कोई अध्याय नहीं मिला। अन्य कीवर्ड आजमाएं या फ़िल्टर रीसेट करें।</p>
+            <button type="button" class="btn btn-sky" onclick="resetDirectoryFilters()">सभी अध्याय दिखाएं</button>
+          </div>
+        `;
+        return;
+      }
+
+      gridEl.innerHTML = filtered.map(function (item) {
+        let badgeCls = 'badge-sky';
+        if (item.status === 'स्रोत उपलब्ध') badgeCls = 'badge-mint';
+        else if (item.status === 'संदर्भित भाग') badgeCls = 'badge-brass';
+
+        return `
+          <article class="ep-card">
+            <div style="display:flex;justify-content:space-between;align-items:center;gap:var(--space-sm);">
+              <span class="mono-num" style="font-size:0.8125rem;color:var(--primary);font-weight:600;">${item.id}</span>
+              <span class="badge ${badgeCls}">${item.status}</span>
+            </div>
+            <h3 style="margin:0;font-family:var(--font-headline);font-weight:500;font-size:1.125rem;line-height:1.35;">${item.title}</h3>
+            <p class="prose-muted" style="font-size:0.9rem;">${item.summary}</p>
+          </article>
+        `;
+      }).join('');
+    }
+
+    function resetDirectoryFilters() {
+      const searchEl = document.getElementById('dir-search');
+      const clusterEl = document.getElementById('dir-cluster');
+      if (searchEl) searchEl.value = '';
+      if (clusterEl) clusterEl.value = 'all';
+      filterDirectory();
+    }
+
+    // Scroll Reveal Observer (once per element)
+    function initScrollReveal() {
+      const items = document.querySelectorAll('.reveal-item');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function (el) { el.classList.add('is-visible'); });
+        return;
+      }
+      const obs = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      items.forEach(function (el) { obs.observe(el); });
+    }
+
+    // Boot
+    document.addEventListener('DOMContentLoaded', function () {
+      selectJourneyStep(0, null);
+      setVibrationState('advaita');
+      selectRebirthStage(0, null);
+      selectChakra(0, null);
+      selectSpiritType(0, null);
+      selectMedStep(0, null);
+      selectBardoStage(0, null);
+      renderSadhanaScript();
+      updateTimerUI();
+      filterDirectory();
+      initScrollReveal();
+      if (window.lucide && typeof window.lucide.createIcons === 'function') {
+        window.lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>
